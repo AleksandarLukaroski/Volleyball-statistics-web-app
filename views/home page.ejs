@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/header"); %>
+    <body>
+        <%- include("./partials/navigation bar"); %>
+        <main>
+            <section class="hero-section">
+                <div class="container">
+                    <div class="hero-section__first-column">
+                        <h1 class=".hero-section__heading">
+                            Follow volleyball<br />
+                            games with ease
+                        </h1>
+                        <p>
+                            Everything you need for volleyball statistics in one
+                            place. Keep track of points easily. View statistics
+                            of your games and share them with your friends. View
+                            game statistics from other statisticians. Watch
+                            scores live.
+                        </p>
+                        <a class="btnPrimary" href="/users/register"
+                            >Register now</a
+                        >
+                        <a class="btnSecondary" href="/#pricing">Pricing</a>
+                    </div>
+                    <div class="hero-section__second-column"></div>
+                </div>
+            </section>
+            <section class="why-to-use">
+                <div class="container">
+                    <h2>Why to use Volleyball Master</h2>
+                    <div class="why-to-use__card-container">
+                        <div class="card why-to-use__card">
+                            <img
+                                src="./media/Icons svg/Icon feather-star.svg"
+                                alt="Star icon"
+                                class="star-icon"
+                            />
+                            <h3>Keep track of points easily</h3>
+                            <p>
+                                In the game dashboard you'll be able to: add new
+                                points, replace players on the field, call time
+                                outs and give cards. A panel with the current
+                                result will be shown, together with the game
+                                information and Play-by-play section, where you
+                                would see the last few points.
+                            </p>
+                        </div>
+                        <div class="card why-to-use__card">
+                            <img
+                                src="./media/Icons svg/Icon material-library-books.svg"
+                                alt="Books icon"
+                                class="books-icon"
+                            />
+                            <h3>View statistics of your games</h3>
+                            <p>
+                                After the game has finished, see various
+                                statistics information of it. You can filter
+                                data by individual sets or see the total
+                                results. Share the game statistics by making the
+                                status Public or set it back to Private whenever
+                                you want.
+                            </p>
+                        </div>
+                        <div class="card why-to-use__card">
+                            <img
+                                src="./media/Icons svg/Icon awesome-volleyball-ball.svg"
+                                alt="Volleyball icon"
+                                class="volleyball-icon"
+                            />
+                            <h3>Watch scores live</h3>
+                            <p>
+                                Watch live scores of every game that is public,
+                                without even having to log in. You'll be able to
+                                see the current result that is being entered by
+                                the statistician on his dashboard. Volleyball
+                                field with the current in-game players will be
+                                displayed and they will change rotations when
+                                necessary. An array of the last 5 points will
+                                also be accessible.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="most-viewed-games">
+                <div class="container">
+                    <h2 class="completed-games-heading">
+                        Most viewed completed games
+                    </h2>
+                    <div class="most-viewed-completed-games-container">
+                        <div class="game-card card">
+                            <p>Macedonia vs Brazil</p>
+                            <div class="final-result">
+                                <div class="match-winner">3</div>
+                                <div>-</div>
+                                <div>0</div>
+                            </div>
+                            <div class="game-card__result">
+                                <div class="game-card__set">
+                                    <div class="game-card__set--winner">25</div>
+                                    <div>23</div>
+                                </div>
+                                <div class="game-card__set">
+                                    <div class="game-card__set--winner">25</div>
+                                    <div>19</div>
+                                </div>
+                                <div class="game-card__set">
+                                    <div class="game-card__set--winner">25</div>
+                                    <div>23</div>
+                                </div>
+                            </div>
+                            <p>Date: <span>15.06.2021</span></p>
+                            <p>Duration: <span>1h 40min</span></p>
+                            <div class="links">
+                                <a class="btnSecondary" href="/completedgames/1"
+                                    >View statistics</a
+                                >
+                            </div>
+                        </div>
+                        <div class="game-card card">
+                            <p>Japan vs USA</p>
+                            <div class="final-result">
+                                <div>0</div>
+                                <div>-</div>
+                                <div class="match-winner">3</div>
+                            </div>
+                            <div class="game-card__result">
+                                <div class="game-card__set">
+                                    <div>23</div>
+                                    <div class="game-card__set--winner">25</div>
+                                </div>
+                                <div class="game-card__set">
+                                    <div>26</div>
+                                    <div class="game-card__set--winner">28</div>
+                                </div>
+                                <div class="game-card__set">
+                                    <div>18</div>
+                                    <div class="game-card__set--winner">25</div>
+                                </div>
+                            </div>
+                            <p>Date: <span>24.11.2020</span></p>
+                            <p>Duration: <span>1h 22min</span></p>
+                            <div class="links">
+                                <a class="btnSecondary" href="/completedgames/1"
+                                    >View statistics</a
+                                >
+                            </div>
+                        </div>
+                        <div class="game-card card">
+                            <p>Italy vs France</p>
+                            <div class="final-result">
+                                <div class="match-winner">3</div>
+                                <div>-</div>
+                                <div>2</div>
+                            </div>
+                            <div class="game-card__result">
+                                <div class="game-card__set">
+                                    <div class="game-card__set--winner">25</div>
+                                    <div>22</div>
+                                </div>
+                                <div class="game-card__set">
+                                    <div>21</div>
+                                    <div class="game-card__set--winner">25</div>
+                                </div>
+                                <div class="game-card__set">
+                                    <div class="game-card__set--winner">26</div>
+                                    <div>24</div>
+                                </div>
+                                <div class="game-card__set">
+                                    <div>23</div>
+                                    <div class="game-card__set--winner">25</div>
+                                </div>
+                                <div class="game-card__set">
+                                    <div class="game-card__set--winner">15</div>
+                                    <div>13</div>
+                                </div>
+                            </div>
+                            <p>Date: <span>12.09.2020</span></p>
+                            <p>Duration: <span>2h 11min</span></p>
+                            <div class="links">
+                                <a class="btnSecondary" href="/completedgames/1"
+                                    >View statistics</a
+                                >
+                            </div>
+                        </div>
+                        <div class="game-card card">
+                            <p>Russia vs Germany</p>
+                            <div class="final-result">
+                                <div class="match-winner">3</div>
+                                <div>-</div>
+                                <div>0</div>
+                            </div>
+                            <div class="game-card__result">
+                                <div class="game-card__set">
+                                    <div class="game-card__set--winner">25</div>
+                                    <div>19</div>
+                                </div>
+                                <div class="game-card__set">
+                                    <div class="game-card__set--winner">25</div>
+                                    <div>21</div>
+                                </div>
+                                <div class="game-card__set">
+                                    <div class="game-card__set--winner">25</div>
+                                    <div>23</div>
+                                </div>
+                            </div>
+                            <p>Date: <span>05.06.2018</span></p>
+                            <p>Duration: <span>1h 14min</span></p>
+                            <div class="links">
+                                <a class="btnSecondary" href="/completedgames/1"
+                                    >View statistics</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                    <a class="btnPrimary more-games" href="/completedgames"
+                        >More games</a
+                    >
+                </div>
+            </section>
+            <section class="satisfied-customers">
+                <div class="container">
+                    <h2>Satisfied customer's stories</h2>
+                    <div class="satisfied-customers__card-container">
+                        <div class="card satisfied-customers__card">
+                            <img
+                                src="./media/png pictures/Ellipse 1.png"
+                                alt="Customer picture"
+                                class="customer-picture"
+                            />
+                            <h4>-Jane Doe</h4>
+                            <p>
+                                As a professional statistician, I can definitely
+                                tell how this app has improved my workflow. It's
+                                super easy to learn and very intuitive.
+                            </p>
+                            <br />
+                            <p>
+                                The statistical informations are provided in a
+                                very clean manner and you can literally filter
+                                through every aspect of the game.
+                            </p>
+                        </div>
+                        <div class="card satisfied-customers__card">
+                            <img
+                                src="./media/png pictures/Ellipse 2.png"
+                                alt="Customer picture"
+                                class="customer-picture"
+                            />
+                            <h4>-John Doe</h4>
+                            <p>
+                                A friend of mine recommended me this app and as
+                                a coach, I started using it for our local
+                                volleyball team. After seeing the final data
+                                when the game has finished, combined with a
+                                video footage, we can analize our games way
+                                better now. It's been a few months since I first
+                                tried the app and I don't plan on quitting.
+                            </p>
+                        </div>
+                        <div class="card satisfied-customers__card">
+                            <img
+                                src="./media/png pictures/Ellipse 3.png"
+                                alt="Customer picture"
+                                class="customer-picture"
+                            />
+                            <h4>-Janet Doe</h4>
+                            <p>
+                                When there is no live streaming of a game, I
+                                always love to watch the live scores. Been able
+                                to see the field rotations in real time and
+                                informations about the last few points, really
+                                adds up to the experience.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="pricing" id="pricing">
+                <div class="container">
+                    <h2>Pricing</h2>
+                    <div class="pricing__card-container">
+                        <div class="card pricing__card">
+                            <h4>Free tier</h4>
+                            <p>
+                                <img
+                                    src="./media/Icons svg/Icon awesome-check.svg"
+                                    alt="Check icon"
+                                    class="check-icon"
+                                />
+                                Add up to 3 games
+                            </p>
+                            <p>
+                                <img
+                                    src="./media/Icons svg/Icon awesome-check.svg"
+                                    alt="Check icon"
+                                    class="check-icon"
+                                />
+                                Get detailed statistics of your games
+                            </p>
+                            <p>
+                                <img
+                                    src="./media/Icons svg/Icon awesome-check.svg"
+                                    alt="Check icon"
+                                    class="check-icon"
+                                />
+                                See detailed statistics of other public
+                                completed games
+                            </p>
+                            <p>
+                                <img
+                                    src="./media/Icons svg/Icon awesome-check.svg"
+                                    alt="Check icon"
+                                    class="check-icon"
+                                />
+                                Watch live scores
+                            </p>
+                            <a class="btnSecondary" href="#">See more</a>
+                        </div>
+                        <div class="card pricing__card pricing__card--focused">
+                            <h4>Premium</h4>
+                            <p>
+                                <img
+                                    src="./media/Icons svg/Icon awesome-check.svg"
+                                    alt="Check icon"
+                                    class="check-icon"
+                                />
+                                Store unlimited amount of games
+                            </p>
+                            <p>
+                                <img
+                                    src="./media/Icons svg/Icon awesome-check.svg"
+                                    alt="Check icon"
+                                    class="check-icon"
+                                />
+                                Get detailed statistics of your games which you
+                                can download
+                            </p>
+                            <p>
+                                <img
+                                    src="./media/Icons svg/Icon awesome-check.svg"
+                                    alt="Check icon"
+                                    class="check-icon"
+                                />
+                                See detailed statistics of other public
+                                completed games
+                            </p>
+                            <p>
+                                <img
+                                    src="./media/Icons svg/Icon awesome-check.svg"
+                                    alt="Check icon"
+                                    class="check-icon"
+                                />
+                                Watch live scores
+                            </p>
+                            <a class="btnPrimary" href="#">See more</a>
+                        </div>
+                        <div class="card pricing__card">
+                            <h4>Teams</h4>
+                            <p>
+                                <img
+                                    src="./media/Icons svg/Icon awesome-check.svg"
+                                    alt="Check icon"
+                                    class="check-icon"
+                                />
+                                Store unlimited amount of games
+                            </p>
+                            <p>
+                                <img
+                                    src="./media/Icons svg/Icon awesome-check.svg"
+                                    alt="Check icon"
+                                    class="check-icon"
+                                />
+                                Get detailed statistics of your games which you
+                                can download
+                            </p>
+                            <p>
+                                <img
+                                    src="./media/Icons svg/Icon awesome-check.svg"
+                                    alt="Check icon"
+                                    class="check-icon"
+                                />
+                                See detailed statistics of other public
+                                completed games
+                            </p>
+                            <p>
+                                <img
+                                    src="./media/Icons svg/Icon awesome-check.svg"
+                                    alt="Check icon"
+                                    class="check-icon"
+                                />
+                                Watch live scores
+                            </p>
+                            <br />
+                            <p>
+                                <img
+                                    src="./media/Icons svg/Icon awesome-check.svg"
+                                    alt="Check icon"
+                                    class="check-icon"
+                                />
+                                Collaborate with your team in real time
+                            </p>
+                            <p>
+                                <img
+                                    src="./media/Icons svg/Icon awesome-check.svg"
+                                    alt="Check icon"
+                                    class="check-icon"
+                                />
+                                Define team roles
+                            </p>
+                            <p>
+                                <img
+                                    src="./media/Icons svg/Icon awesome-check.svg"
+                                    alt="Check icon"
+                                    class="check-icon"
+                                />
+                                Add notes with defined privileges of who can
+                                edit them
+                            </p>
+                            <a class="btnSecondary" href="#">See more</a>
+                        </div>
+                    </div>
+                    <a class="see-more-details" href="#"
+                        >See more details
+                        <img
+                            src="./media/Icons svg/Icon awesome-arrow-right.svg"
+                            alt="Arrow icon"
+                            class="arrow-icon"
+                    /></a>
+                </div>
+            </section>
+            <section class="contact-us" id="contact">
+                <div class="container">
+                    <div class="contact-us__container">
+                        <div class="contact-us__first-column">
+                            <h2>Contact us</h2>
+                            <div class="label-input">
+                                <label for="fullName">Full name</label><br />
+                                <input
+                                    type="text"
+                                    name="fullName"
+                                    id="fullName"
+                                />
+                            </div>
+                            <div class="label-input">
+                                <label for="email">Email</label><br />
+                                <input type="email" name="email" id="email" />
+                            </div>
+                            <div class="label-input">
+                                <label for="message">Message</label><br />
+                                <textarea name="message" rows="10"></textarea>
+                            </div>
+                            <button class="btnSecondary">Send</button>
+                        </div>
+                        <div class="contact-us__second-column"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <%- include("./partials/footer"); %>
+    </body>
+</html>

@@ -1,0 +1,114 @@
+@use "../utilities" as u;
+
+.volleyball-court {
+    font-size: 2rem;
+    border: 2px solid hsl(0, 0%, 62%);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    max-width: 35rem;
+    height: 48rem;
+    margin: 0 auto 2rem auto;
+
+    @include u.breakpoint-up(medium) {
+        flex-direction: row;
+        height: 22rem;
+        max-width: 55rem;
+    }
+
+    &__left,
+    &__right {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        align-items: center;
+
+        @include u.breakpoint-up(medium) {
+            flex-direction: row;
+        }
+    }
+
+    &__left {
+        justify-content: end;
+        border-bottom: 4px solid hsl(0, 0%, 62%);
+
+        @include u.breakpoint-up(medium) {
+            border-right: 4px solid hsl(0, 0%, 62%);
+            border-bottom: none;
+        }
+    }
+
+    &__right {
+        justify-content: start;
+    }
+
+    &__left-column,
+    &__right-column {
+        padding: 1rem 0.5rem;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+
+        @include u.breakpoint-up(medium) {
+            flex-direction: column;
+            width: fit-content;
+            height: 100%;
+        }
+
+        div {
+            margin: auto;
+            padding: 0.5rem 1.5rem;
+            background-color: rgb(255, 255, 255);
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    &__left-column {
+        &:first-child {
+            flex-grow: 1;
+            align-items: flex-start;
+            div {
+                margin: 2rem 0 0 0;
+
+                @include u.breakpoint-up(medium) {
+                    margin: 0 0 0 2rem;
+                }
+            }
+        }
+
+        &:last-child {
+            border-top: 1px solid hsl(0, 0%, 62%);
+
+            @include u.breakpoint-up(medium) {
+                border-left: 2px solid hsl(0, 0%, 62%);
+                border-top: none;
+            }
+        }
+    }
+
+    &__right-column {
+        &:last-child {
+            flex-grow: 1;
+            align-items: flex-end;
+            div {
+                margin: 0 0 2rem 0;
+
+                @include u.breakpoint-up(medium) {
+                    margin: 0 2rem 0 0;
+                }
+            }
+        }
+
+        &:first-child {
+            border-bottom: 1px solid hsl(0, 0%, 62%);
+
+            @include u.breakpoint-up(medium) {
+                border-right: 2px solid hsl(0, 0%, 62%);
+                border-bottom: none;
+            }
+        }
+    }
+}

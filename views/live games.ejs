@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/header"); %>
+    <body>
+        <%- include("./partials/navigation bar"); %>
+        <main>
+            <div class="container">
+                <h2 class="live-games__heading">See other live games</h2>
+                <%- include("./partials/messages"); %>
+                <br />
+                <div class="live-games-container">
+                    <div class="game-card card">
+                        <p>China vs Spain</p>
+                        <div class="final-result">
+                            <div class="match-winner">2</div>
+                            <div>-</div>
+                            <div>1</div>
+                        </div>
+                        <div class="game-card__result">
+                            <div class="game-card__set">
+                                <div class="game-card__set--winner">25</div>
+                                <div>23</div>
+                            </div>
+                            <div class="game-card__set">
+                                <div class="game-card__set--winner">25</div>
+                                <div>19</div>
+                            </div>
+                            <div class="game-card__set">
+                                <div>20</div>
+                                <div class="game-card__set--winner">25</div>
+                            </div>
+                            <div class="game-card__set">
+                                <div>21</div>
+                                <div>19</div>
+                            </div>
+                        </div>
+                        <p>Started at: <span>11h</span></p>
+                        <div class="links">
+                            <a class="btnSecondary" href="/livegames/1"
+                                >View game</a
+                            >
+                        </div>
+                    </div>
+                    <div class="game-card card">
+                        <p>Slovenia vs Poland</p>
+                        <div class="final-result">
+                            <div>0</div>
+                            <div>-</div>
+                            <div class="match-winner">2</div>
+                        </div>
+                        <div class="game-card__result">
+                            <div class="game-card__set">
+                                <div>20</div>
+                                <div class="game-card__set--winner">25</div>
+                            </div>
+                            <div class="game-card__set">
+                                <div>19</div>
+                                <div class="game-card__set--winner">25</div>
+                            </div>
+                            <div class="game-card__set">
+                                <div>5</div>
+                                <div>8</div>
+                            </div>
+                        </div>
+                        <p>Started at: <span>18h</span></p>
+                        <div class="links">
+                            <a class="btnSecondary" href="/livegames/1"
+                                >View game</a
+                            >
+                        </div>
+                    </div>
+                    <div class="game-card card">
+                        <p>Germany vs Portugal</p>
+                        <div class="final-result">
+                            <div>1</div>
+                            <div>-</div>
+                            <div>1</div>
+                        </div>
+                        <div class="game-card__result">
+                            <div class="game-card__set">
+                                <div class="game-card__set--winner">25</div>
+                                <div>23</div>
+                            </div>
+                            <div class="game-card__set">
+                                <div>25</div>
+                                <div class="game-card__set--winner">27</div>
+                            </div>
+                            <div class="game-card__set">
+                                <div>20</div>
+                                <div>21</div>
+                            </div>
+                        </div>
+                        <p>Started at: <span>21h</span></p>
+                        <div class="links">
+                            <a class="btnSecondary" href="/livegames/1"
+                                >View game</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <%- include("./partials/footer"); %>
+    </body>
+</html>

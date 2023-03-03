@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/header"); %>
+    <body>
+        <%- include("./partials/navigation bar"); %>
+        <main>
+            <div class="container">
+                <div>
+                    <h2 class="my-games-heading">My games</h2>
+                    <a class="logout-button" href="/users/logout">Logout</a>
+                    <p class="welcome-message">
+                        <%= name %>, welcome to your profile.
+                    </p>
+                    <%- include("./partials/messages"); %>
+                    <br />
+                    <div class="my-games-container">
+                        <a
+                            class="add-new-game"
+                            href="/addnewgame/gameinformation"
+                            >+Add new game</a
+                        >
+                        <div class="game-card card">
+                            <p>Argentina vs Canada</p>
+                            <div class="final-result">
+                                <div class="match-winner">3</div>
+                                <div>-</div>
+                                <div>1</div>
+                            </div>
+                            <div class="game-card__result">
+                                <div class="game-card__set">
+                                    <div class="game-card__set--winner">25</div>
+                                    <div>23</div>
+                                </div>
+                                <div class="game-card__set">
+                                    <div class="game-card__set--winner">25</div>
+                                    <div>19</div>
+                                </div>
+                                <div class="game-card__set">
+                                    <div>20</div>
+                                    <div class="game-card__set--winner">25</div>
+                                </div>
+                                <div class="game-card__set">
+                                    <div class="game-card__set--winner">25</div>
+                                    <div>23</div>
+                                </div>
+                            </div>
+                            <p>Date: <span>15.06.2021</span></p>
+                            <p>Duration: <span>1h 40min</span></p>
+                            <p>Privacy: <span>Private</span></p>
+                            <div class="links">
+                                <a class="btnSecondary" href="/completedgames/1"
+                                    >View statistics</a
+                                >
+                                <a class="btnSecondary" href="#">Edit</a>
+                            </div>
+                        </div>
+                        <div class="game-card card">
+                            <p>Cuba vs Australia</p>
+                            <div class="final-result">
+                                <div class="match-winner">3</div>
+                                <div>-</div>
+                                <div>0</div>
+                            </div>
+                            <div class="game-card__result">
+                                <div class="game-card__set">
+                                    <div class="game-card__set--winner">25</div>
+                                    <div>18</div>
+                                </div>
+                                <div class="game-card__set">
+                                    <div class="game-card__set--winner">25</div>
+                                    <div>20</div>
+                                </div>
+                                <div class="game-card__set">
+                                    <div class="game-card__set--winner">25</div>
+                                    <div>23</div>
+                                </div>
+                            </div>
+                            <p>Date: <span>05.06.2019</span></p>
+                            <p>Duration: <span>1h 10min</span></p>
+                            <p>Privacy: <span>Public</span></p>
+                            <div class="links">
+                                <a class="btnSecondary" href="/completedgames/1"
+                                    >View statistics</a
+                                >
+                                <a class="btnSecondary" href="#">Edit</a>
+                            </div>
+                        </div>
+                        <div class="game-card card">
+                            <p>Japan vs USA</p>
+                            <div class="final-result">
+                                <div>0</div>
+                                <div>-</div>
+                                <div class="match-winner">3</div>
+                            </div>
+                            <div class="game-card__result">
+                                <div class="game-card__set">
+                                    <div>23</div>
+                                    <div class="game-card__set--winner">25</div>
+                                </div>
+                                <div class="game-card__set">
+                                    <div>26</div>
+                                    <div class="game-card__set--winner">28</div>
+                                </div>
+                                <div class="game-card__set">
+                                    <div>18</div>
+                                    <div class="game-card__set--winner">25</div>
+                                </div>
+                            </div>
+                            <p>Date: <span>24.11.2020</span></p>
+                            <p>Duration: <span>1h 22min</span></p>
+                            <p>Privacy: <span>Public</span></p>
+                            <div class="links">
+                                <a class="btnSecondary" href="/completedgames/1"
+                                    >View statistics</a
+                                >
+                                <a class="btnSecondary" href="#">Edit</a>
+                            </div>
+                        </div>
+                        <div class="game-card card">
+                            <p>Italy vs France</p>
+                            <div class="final-result">
+                                <div class="match-winner">3</div>
+                                <div>-</div>
+                                <div>2</div>
+                            </div>
+                            <div class="game-card__result">
+                                <div class="game-card__set">
+                                    <div class="game-card__set--winner">25</div>
+                                    <div>22</div>
+                                </div>
+                                <div class="game-card__set">
+                                    <div>21</div>
+                                    <div class="game-card__set--winner">25</div>
+                                </div>
+                                <div class="game-card__set">
+                                    <div class="game-card__set--winner">26</div>
+                                    <div>24</div>
+                                </div>
+                                <div class="game-card__set">
+                                    <div>23</div>
+                                    <div class="game-card__set--winner">25</div>
+                                </div>
+                                <div class="game-card__set">
+                                    <div class="game-card__set--winner">15</div>
+                                    <div>13</div>
+                                </div>
+                            </div>
+                            <p>Date: <span>12.09.2020</span></p>
+                            <p>Duration: <span>2h 11min</span></p>
+                            <p>Privacy: <span>Public</span></p>
+                            <div class="links">
+                                <a class="btnSecondary" href="/completedgames/1"
+                                    >View statistics</a
+                                >
+                                <a class="btnSecondary" href="#">Edit</a>
+                            </div>
+                        </div>
+                        <div class="game-card card">
+                            <p>Russia vs Germany</p>
+                            <div class="final-result">
+                                <div class="match-winner">3</div>
+                                <div>-</div>
+                                <div>0</div>
+                            </div>
+                            <div class="game-card__result">
+                                <div class="game-card__set">
+                                    <div class="game-card__set--winner">25</div>
+                                    <div>19</div>
+                                </div>
+                                <div class="game-card__set">
+                                    <div class="game-card__set--winner">25</div>
+                                    <div>21</div>
+                                </div>
+                                <div class="game-card__set">
+                                    <div class="game-card__set--winner">25</div>
+                                    <div>23</div>
+                                </div>
+                            </div>
+                            <p>Date: <span>05.06.2018</span></p>
+                            <p>Duration: <span>1h 14min</span></p>
+                            <p>Privacy: <span>Public</span></p>
+                            <div class="links">
+                                <a class="btnSecondary" href="/completedgames/1"
+                                    >View statistics</a
+                                >
+                                <a class="btnSecondary" href="#">Edit</a>
+                            </div>
+                        </div>
+                        <div class="game-card card">
+                            <p>Macedonia vs Brazil</p>
+                            <div class="final-result">
+                                <div class="match-winner">3</div>
+                                <div>-</div>
+                                <div>0</div>
+                            </div>
+                            <div class="game-card__result">
+                                <div class="game-card__set">
+                                    <div class="game-card__set--winner">25</div>
+                                    <div>23</div>
+                                </div>
+                                <div class="game-card__set">
+                                    <div class="game-card__set--winner">25</div>
+                                    <div>19</div>
+                                </div>
+                                <div class="game-card__set">
+                                    <div class="game-card__set--winner">25</div>
+                                    <div>23</div>
+                                </div>
+                            </div>
+                            <p>Date: <span>15.06.2021</span></p>
+                            <p>Duration: <span>1h 40min</span></p>
+                            <p>Privacy: <span>Public</span></p>
+                            <div class="links">
+                                <a class="btnSecondary" href="/completedgames/1"
+                                    >View statistics</a
+                                >
+                                <a class="btnSecondary" href="#">Edit</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <%- include("./partials/footer"); %>
+    </body>
+</html>

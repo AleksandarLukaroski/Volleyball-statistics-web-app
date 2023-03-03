@@ -1,0 +1,73 @@
+@use "../utilities" as u;
+
+.game-card {
+    // background-color: red;
+    width: 30rem;
+    font-weight: bold;
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // gap: 0.5rem;
+
+    p {
+        font-size: 2rem;
+
+        span {
+            font-weight: normal;
+        }
+    }
+
+    .final-result {
+        div {
+            display: inline-block;
+        }
+
+        .match-winner {
+            color: u.$secondary-color;
+        }
+    }
+
+    &__result {
+        background-color: white;
+        margin: 2rem 0 3rem;
+        border-radius: 10px;
+    }
+
+    &__set {
+        display: inline-block;
+        border-right: 2px solid rgb(232, 232, 232);
+
+        div {
+            padding: 0.7rem 0.5rem;
+
+            &:first-child {
+                padding-bottom: 0;
+            }
+
+            &:last-child {
+                padding-top: 0;
+            }
+        }
+
+        &:last-child {
+            border-right: none;
+        }
+
+        &--winner {
+            color: u.$secondary-color;
+        }
+    }
+
+    .links {
+        margin-top: 2rem;
+
+        a {
+            display: inline-block;
+
+            &:first-child {
+                margin-right: 1rem;
+            }
+        }
+    }
+}

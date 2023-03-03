@@ -1,0 +1,44 @@
+@use "../utilities" as u;
+
+.my-games-heading {
+    margin-bottom: 4rem;
+}
+
+.logout-button {
+    display: inline-block;
+    font-size: 1.5rem;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    margin-right: 1rem;
+    border: 2px solid rgb(167, 167, 167);
+    border-radius: 15px;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.welcome-message {
+    display: inline-block;
+    font-size: 1.5rem;
+}
+
+.my-games-container {
+    .add-new-game {
+        // background-color: red;
+        border: 2px solid rgb(167, 167, 167);
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+
+        @include u.breakpoint-down(medium) {
+            padding: 1rem 0;
+        }
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

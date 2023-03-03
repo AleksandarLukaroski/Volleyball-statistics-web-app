@@ -1,0 +1,63 @@
+//This component is also used for last-5-points-card in pages: game-dashboard and live-game
+
+.current-result-card {
+    font-weight: bold;
+    font-size: 2rem;
+
+    h2 {
+        margin-bottom: 2rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+        span {
+            font-weight: normal;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+
+    &__result-board,
+    &__additional-info {
+        // background-color: red;
+        display: inline-block;
+    }
+
+    &__result-board {
+        // background-color: rgb(203, 78, 78);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    &__result-board-teams {
+        p {
+            &:first-of-type {
+                margin-bottom: 0.5rem;
+            }
+        }
+    }
+
+    .game-card__result {
+        margin: 0;
+    }
+
+    &__additional-info {
+        flex-grow: 1;
+        display: flex;
+        flex-wrap: wrap;
+        // gap: 2rem;
+        max-width: 30rem;
+        align-items: center;
+
+        p {
+            margin-right: 2rem;
+            // line-height: 1.5;
+        }
+    }
+}

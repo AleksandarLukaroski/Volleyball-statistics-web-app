@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/header"); %>
+    <body>
+        <%- include("./partials/navigation bar"); %>
+        <main>
+            <div class="container">
+                <div class="card card-add-new-game">
+                    <div class="top-of-form">
+                        <span class="btnSecondary">1/5</span>
+                        <h2 class="card__title">Game information</h2>
+                    </div>
+                    <%- include("./partials/messages"); %>
+                    <form
+                        class="form-add-new-game"
+                        action="/addnewgame/gameinformation"
+                        method="post"
+                    >
+                        <input type="hidden" name="formNumber" value="1" />
+                        <input type="hidden" name="numberOfPlayers" value="8" />
+                        <div class="label-input">
+                            <label for="firstTeam">First team</label><br />
+                            <input
+                                type="text"
+                                name="teamName"
+                                id="firstTeam"
+                                value="<%= typeof teamName != 'undefined' ? teamName[0] : '' %>"
+                            /><br />
+                        </div>
+                        <div class="label-input">
+                            <label for="secondTeam">Second team</label><br />
+                            <input
+                                type="text"
+                                name="teamName"
+                                id="secondTeam"
+                                value="<%= typeof teamName != 'undefined' ? teamName[1] : '' %>"
+                            /><br />
+                        </div>
+                        <div class="label-input">
+                            <label for="league">League</label><br />
+                            <input
+                                type="text"
+                                name="gameAttributes"
+                                id="league"
+                                value="<%= typeof gameAttributes != 'undefined' ? gameAttributes[0] : '' %>"
+                            /><br />
+                        </div>
+                        <div class="label-input">
+                            <label for="cityCountry">City and country</label
+                            ><br />
+                            <input
+                                type="text"
+                                name="gameAttributes"
+                                id="cityCountry"
+                                value="<%= typeof gameAttributes != 'undefined' ? gameAttributes[1] : '' %>"
+                            /><br />
+                        </div>
+                        <div class="label-input">
+                            <label for="hall">Hall</label><br />
+                            <input
+                                type="text"
+                                name="gameAttributes"
+                                id="hall"
+                                value="<%= typeof gameAttributes != 'undefined' ? gameAttributes[2] : '' %>"
+                            /><br />
+                        </div>
+                        <br />
+                        <div class="label-input">
+                            <label for="firstReferee">First referee</label
+                            ><br />
+                            <input
+                                type="text"
+                                name="gameAttributes"
+                                id="firstReferee"
+                                value="<%= typeof gameAttributes != 'undefined' ? gameAttributes[3] : '' %>"
+                                league
+                            /><br />
+                        </div>
+                        <div class="label-input">
+                            <label for="secondReferee">Second referee</label
+                            ><br />
+                            <input
+                                type="text"
+                                name="gameAttributes"
+                                id="secondReferee"
+                                value="<%= typeof gameAttributes != 'undefined' ? gameAttributes[4] : '' %>"
+                                league
+                            /><br />
+                        </div>
+                        <div class="label-input">
+                            <label for="gameDescription">Game description</label
+                            ><br />
+                            <textarea
+                                name="gameAttributes"
+                                rows="10"
+                            ></textarea>
+                        </div>
+                        <div class="label-input">
+                            <label for="gamePrivacy"
+                                >Game privacy
+                                <span
+                                    >(Make this game visible to others?)</span
+                                ></label
+                            ><br />
+                            <select name="gameAttributes">
+                                <option value="private">Private</option>
+                                <option value="public">Public</option>
+                            </select>
+                        </div>
+                        <button class="btnPrimary" type="submit">Next</button>
+                    </form>
+                </div>
+            </div>
+            <!-- <button id="randomKopce">Random kopce</button>
+            <button id="vtoroKopce" class="hide">Vtoro kopce</button>
+            <button id="tretoKopce">Treto kopce</button>
+
+            <h2>Add new point</h2>
+            <div class="label-input">
+                <label for="team">Team</label><br />
+                <select name="team" id="addNewPointTeam">
+                    <option value="0">Tim 1</option>
+                    <option value="1">Tim 2</option>
+                </select>
+            </div>
+            <div class="label-input">
+                <label for="typeOfPoint">Type of point</label><br />
+                <select name="typeOfPoint">
+                    <option value="Attack">Attack</option>
+                    <option value="Block">Block</option>
+                    <option value="Block out">Block out</option>
+                    <option value="Ace">Ace</option>
+                    <option value="Error">Error</option>
+                </select>
+            </div>
+            <div class="label-input">
+                <label for="player">Player</label><br />
+                <select name="player" id="addNewPointFirstTeamPlayers">
+                    <% for (let i = 0; i < 3; i++){ %>
+                    <option value="1">igrac od prv tim</option>
+                    <% } %>
+                </select>
+                <select
+                    name="player"
+                    id="addNewPointSecondTeamPlayers"
+                    class="hide"
+                >
+                    <% for (let i = 0; i < 3; i++){ %>
+                    <option value="2">igrac od vtor tim</option>
+                    <% } %>
+                </select>
+            </div> -->
+        </main>
+        <%- include("./partials/footer"); %>
+    </body>
+</html>

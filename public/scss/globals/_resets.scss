@@ -1,0 +1,86 @@
+@use "../utilities" as u;
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: u.$font;
+    background-color: u.$primary-blue-color;
+    color: u.$main-text-color;
+}
+
+input,
+select {
+    display: inline-block;
+    margin-bottom: 1rem;
+    padding: 1rem 1.5rem;
+    background-color: u.$input-field-color;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.6rem;
+    width: 22rem;
+}
+
+select {
+    cursor: pointer;
+}
+
+textarea {
+    border: none;
+    border-radius: 25px;
+    resize: vertical;
+    font-size: 1.6rem;
+    padding: 1rem 1.5rem;
+    // overflow-x: hidden;
+}
+
+button {
+    background: none;
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 2rem;
+    padding: 1rem 2rem;
+    margin: 1rem 0 2.5rem;
+    cursor: pointer;
+}
+
+.google-icon,
+.twitter-icon,
+.facebook-icon,
+.youtube-icon,
+.email-icon {
+    height: 1.5rem;
+    margin-right: 0.5rem;
+}
+
+.star-icon,
+.volleyball-icon {
+    margin: -4rem 0;
+}
+
+.books-icon {
+    margin: -2.5rem 0;
+}
+
+.customer-picture {
+    height: 8rem;
+}
+
+.check-icon {
+    height: 1rem;
+}
+
+.arrow-icon {
+    height: 1.3rem;
+}

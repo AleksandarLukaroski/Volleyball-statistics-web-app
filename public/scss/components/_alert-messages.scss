@@ -1,0 +1,23 @@
+.alert-div {
+    margin: 0.5rem 0;
+
+    &:last-of-type {
+        margin-bottom: 2rem;
+    }
+
+    &__message {
+        color: red;
+        margin: 0;
+        padding: 1rem;
+        border-radius: 0.5rem;
+
+        &--error {
+            border: 2px solid red;
+        }
+
+        &--success {
+            color: black;
+            border: 2px solid rgb(113, 216, 62);
+        }
+    }
+}

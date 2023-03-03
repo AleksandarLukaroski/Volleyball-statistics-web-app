@@ -1,0 +1,15 @@
+.game-information-card {
+    &__paragraphs {
+        display: flex;
+        flex-wrap: wrap;
+
+        p {
+            margin-right: 2rem;
+        }
+    }
+
+    h3 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+}

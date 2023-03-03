@@ -1,0 +1,77 @@
+@use "../utilities" as u;
+
+.card-add-team {
+    max-width: 121rem;
+    margin: 0 auto;
+
+    h4 {
+        margin-top: 3rem;
+        font-size: 2.3rem;
+    }
+
+    .head-coach,
+    .second-coach,
+    .team-doctor,
+    .players {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 1.8rem;
+
+        div {
+            display: inline-block;
+        }
+    }
+
+    .players label {
+        display: block;
+    }
+
+    .players div:first-child h4 {
+        font-size: 2rem;
+        margin: 0 0 0.5rem;
+        @media screen and (min-width: 77.5em) {
+            display: none;
+        }
+    }
+
+    .players div:first-child h4.show-always {
+        @media screen and (min-width: 77.5em) {
+            display: block;
+        }
+    }
+
+    .player-number {
+        padding: 0.7rem 0;
+        display: flex;
+        justify-content: center;
+        width: 7rem;
+        background-color: u.$green-accent-color;
+        border-radius: 50px;
+        font-size: 1.7rem;
+        font-weight: bold;
+    }
+
+    .players div label {
+        @media screen and (min-width: 77.5em) {
+            display: none;
+        }
+    }
+
+    .players div label.show-always {
+        @media screen and (min-width: 77.5em) {
+            display: block;
+        }
+    }
+
+    .birth-date-input {
+        width: 16rem;
+    }
+
+    .height-input {
+        width: 8rem;
+    }
+
+    .jersey-input {
+        width: 7rem;
+    }
+}

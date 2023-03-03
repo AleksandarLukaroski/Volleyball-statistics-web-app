@@ -1,0 +1,25 @@
+.btnPrimary {
+    color: white;
+    background-color: #7446f9;
+    background-image: linear-gradient(to bottom right, #7446f9, #9527b7);
+    box-shadow: 10px 7px 50px 5px rgba(140, 44, 193, 0.55);
+
+    &:hover {
+        transform: translateY(-3px);
+    }
+}
+
+.btnSecondary {
+    background-color: #fff;
+    background-image: linear-gradient(to bottom right, white, #e1ebfd);
+    box-shadow: 10px 10px 50px 5px rgba(128, 135, 146, 0.3);
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    text-align: center;
+
+    &:hover {
+        transform: translateY(-3px);
+    }
+}

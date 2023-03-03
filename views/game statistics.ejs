@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/header"); %>
+    <body>
+        <%- include("./partials/navigation bar"); %>
+        <main>
+            <div class="container statistics-dashboard">
+                <section class="statistics-information">
+                    <div class="statistics-dashboard__column">
+                        <div class="card current-result-card">
+                            <h2>Final result</h2>
+                            <div class="current-result-card__content">
+                                <div class="current-result-card__result-board">
+                                    <div
+                                        class="current-result-card__result-board-teams"
+                                    >
+                                        <p>Macedonia</p>
+                                        <p>Brazil</p>
+                                    </div>
+                                    <div class="game-card__result">
+                                        <div class="game-card__set">
+                                            <div class="game-card__set--winner">
+                                                3
+                                            </div>
+                                            <div>0</div>
+                                        </div>
+                                        <div class="game-card__set">
+                                            <div class="game-card__set--winner">
+                                                25
+                                            </div>
+                                            <div>23</div>
+                                        </div>
+                                        <div class="game-card__set">
+                                            <div class="game-card__set--winner">
+                                                25
+                                            </div>
+                                            <div>19</div>
+                                        </div>
+                                        <div class="game-card__set">
+                                            <div class="game-card__set--winner">
+                                                25
+                                            </div>
+                                            <div>23</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="current-result-card__additional-info"
+                                >
+                                    <p>Played on: <span>15.06.2021</span></p>
+                                    <p>Started at: <span>18:00</span></p>
+                                    <p>Ended at: <span>19:40</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card game-information-card">
+                            <h2>Game information</h2>
+                            <h3>Macedonia vs Brazil</h3>
+                            <div class="game-information-card__paragraphs">
+                                <p>League: <span>World League</span></p>
+                                <p>
+                                    City and country:
+                                    <span>Skopje, Macedonia</span>
+                                </p>
+                                <p>Hall: <span>Boris Trajkovski</span></p>
+                                <p>Date: <span>15.06.2021</span></p>
+                                <p>
+                                    First referee:
+                                    <span>Vladimir Simonovic</span>
+                                </p>
+                                <p>Second referee: <span>Juraj Mokry</span></p>
+                                <p>
+                                    Game description:
+                                    <span
+                                        >Lorem ipsum dolor sit amet consectetur
+                                        adipisicing elit. Adipisci non officiis
+                                        accusantium obcaecati explicabo eum odit
+                                        doloremque eveniet sunt recusandae
+                                        voluptates velit illum, aliquid minus
+                                        culpa nostrum minima cum quae?</span
+                                    >
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="statistics-dashboard__column">
+                        <div class="card game-scores-card">
+                            <button>Total</button>
+                            <button>Set 1</button>
+                            <button>Set 2</button>
+                            <button>Set 3</button>
+                            <table class="game-scores-card__content">
+                                <tr>
+                                    <th>Macedonia</th>
+                                    <th>Scores</th>
+                                    <th>Brazil</th>
+                                </tr>
+                                <tr>
+                                    <td>43</td>
+                                    <td>Attacks</td>
+                                    <td>35</td>
+                                </tr>
+                                <tr>
+                                    <td>10</td>
+                                    <td>Blocks</td>
+                                    <td>11</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Aces</td>
+                                    <td>3</td>
+                                </tr>
+                                <tr>
+                                    <td>17</td>
+                                    <td>Opp. errors</td>
+                                    <td>16</td>
+                                </tr>
+                                <tr>
+                                    <td>75</td>
+                                    <td>Total points</td>
+                                    <td>65</td>
+                                </tr>
+                            </table>
+                            <table class="game-scores-card__best-scorers">
+                                <tr>
+                                    <td></td>
+                                    <th colspan="2">Best scorers</th>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Nikola Gjorgiev</td>
+                                    <td>15</td>
+                                    <td>12</td>
+                                    <td>Wallace De Souza</td>
+                                </tr>
+                                <tr>
+                                    <td>Aleksandar Ljaftov</td>
+                                    <td>10</td>
+                                    <td>8</td>
+                                    <td>Yoandy Leal Hidalgo</td>
+                                </tr>
+                                <tr>
+                                    <td>Vlado Milev</td>
+                                    <td>8</td>
+                                    <td>5</td>
+                                    <td>Ricardo Lucarelli Souza</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+                <section class="statistics-teams">
+                    <div class="statistics-dashboard__column">
+                        <div class="card first-team-card">
+                            <h2>Team Macedonia</h2>
+                            <p>Head coach: <span>Nikola Matijasevikj</span></p>
+                            <p>Second coach: <span>Dean Stojanov</span></p>
+                            <p>Team doctor: <span>Stojan Stojanovski</span></p>
+                            <table class="first-team-card__content">
+                                <tr>
+                                    <th colspan="3">Players</th>
+                                    <th colspan="3">Points per set</th>
+                                    <th></th>
+                                </tr>
+                                <tr>
+                                    <th>N</th>
+                                    <th>Full name</th>
+                                    <th>Position</th>
+                                    <th>1</th>
+                                    <th>2</th>
+                                    <th>3</th>
+                                    <th>Total</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Darko Angelovski</td>
+                                    <td>Libero</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Gjorgi Gjorgiev</td>
+                                    <td>Setter</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>2</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Risto Nikolov</td>
+                                    <td>Middle blocker</td>
+                                    <td>2</td>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>5</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Nikola Gjorgiev</td>
+                                    <td>Opposite</td>
+                                    <td>6</td>
+                                    <td>5</td>
+                                    <td>4</td>
+                                    <td>15</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Slave Nakov</td>
+                                    <td>Middle blocker</td>
+                                    <td>1</td>
+                                    <td>0</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Vlado Milev</td>
+                                    <td>Outside hitter</td>
+                                    <td>3</td>
+                                    <td>3</td>
+                                    <td>2</td>
+                                    <td>8</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>Vase Mihailov</td>
+                                    <td>Libero</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>Aleksandar Ljaftov</td>
+                                    <td>Outside hitter</td>
+                                    <td>4</td>
+                                    <td>2</td>
+                                    <td>4</td>
+                                    <td>10</td>
+                                </tr>
+                            </table>
+                            <table class="first-team-card__starting-lineups">
+                                <tr>
+                                    <th colspan="7">Starting lineups</th>
+                                </tr>
+                                <tr>
+                                    <th>Set</th>
+                                    <th>1</th>
+                                    <th>2</th>
+                                    <th>3</th>
+                                    <th>4</th>
+                                    <th>5</th>
+                                    <th>6</th>
+                                </tr>
+                                <tr>
+                                    <th>1</th>
+                                    <td>6</td>
+                                    <td>3</td>
+                                    <td>4</td>
+                                    <td>8</td>
+                                    <td>5</td>
+                                    <td>2</td>
+                                </tr>
+                                <tr>
+                                    <th>2</th>
+                                    <td>2</td>
+                                    <td>6</td>
+                                    <td>3</td>
+                                    <td>4</td>
+                                    <td>8</td>
+                                    <td>5</td>
+                                </tr>
+                                <tr>
+                                    <th>3</th>
+                                    <td>2</td>
+                                    <td>6</td>
+                                    <td>3</td>
+                                    <td>4</td>
+                                    <td>8</td>
+                                    <td>5</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="statistics-dashboard__column">
+                        <div class="card second-team-card">
+                            <h2>Team Brazil</h2>
+                            <p>Head coach: <span>Renan Dal Zotto</span></p>
+                            <p>Second coach: <span>Bernardo Rezende</span></p>
+                            <p>Team doctor: <span>Franco Felipe</span></p>
+                            <table class="second-team-card__content">
+                                <tr>
+                                    <th colspan="3">Players</th>
+                                    <th colspan="3">Points per set</th>
+                                    <th></th>
+                                </tr>
+                                <tr>
+                                    <th>N</th>
+                                    <th>Full name</th>
+                                    <th>Position</th>
+                                    <th>1</th>
+                                    <th>2</th>
+                                    <th>3</th>
+                                    <th>Total</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Bruno Rezende</td>
+                                    <td>Setter</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Wallace De Souza</td>
+                                    <td>Opposite</td>
+                                    <td>5</td>
+                                    <td>4</td>
+                                    <td>3</td>
+                                    <td>12</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Ricardo Lucarelli Souza</td>
+                                    <td>Outside hitter</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>3</td>
+                                    <td>5</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Darlan Souza</td>
+                                    <td>Opposite</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>2</td>
+                                    <td>2</td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>Lucas Saatkamp</td>
+                                    <td>Middle blocker</td>
+                                    <td>1</td>
+                                    <td>0</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                </tr>
+                                <tr>
+                                    <td>12</td>
+                                    <td>Fernando Kreling</td>
+                                    <td>Libero</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>15</td>
+                                    <td>Rodrigo Leao</td>
+                                    <td>Middle blocker</td>
+                                    <td>0</td>
+                                    <td>2</td>
+                                    <td>2</td>
+                                    <td>4</td>
+                                </tr>
+                                <tr>
+                                    <td>23</td>
+                                    <td>Yoandy Leal Hidalgo</td>
+                                    <td>Outside hitter</td>
+                                    <td>3</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                    <td>8</td>
+                                </tr>
+                            </table>
+                            <table class="second-team-card__starting-lineups">
+                                <tr>
+                                    <th colspan="7">Starting lineups</th>
+                                </tr>
+                                <tr>
+                                    <th>Set</th>
+                                    <th>1</th>
+                                    <th>2</th>
+                                    <th>3</th>
+                                    <th>4</th>
+                                    <th>5</th>
+                                    <th>6</th>
+                                </tr>
+                                <tr>
+                                    <th>1</th>
+                                    <td>3</td>
+                                    <td>23</td>
+                                    <td>8</td>
+                                    <td>1</td>
+                                    <td>4</td>
+                                    <td>15</td>
+                                </tr>
+                                <tr>
+                                    <th>2</th>
+                                    <td>3</td>
+                                    <td>23</td>
+                                    <td>8</td>
+                                    <td>1</td>
+                                    <td>4</td>
+                                    <td>15</td>
+                                </tr>
+                                <tr>
+                                    <th>3</th>
+                                    <td>23</td>
+                                    <td>8</td>
+                                    <td>1</td>
+                                    <td>4</td>
+                                    <td>15</td>
+                                    <td>3</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+                <section class="statistics-play-by-play">
+                    <div class="statistics-dashboard__column">
+                        <div class="card first-team-card">
+                            <h2>All points- play by play</h2>
+                            <button>Set 1</button>
+                            <button>Set 2</button>
+                            <button>Set 3</button>
+                        </div>
+                        <div class="last-points">
+                            <div class="card current-result-card">
+                                <div class="current-result-card__content">
+                                    <div
+                                        class="current-result-card__result-board"
+                                    >
+                                        <div
+                                            class="current-result-card__result-board-teams"
+                                        >
+                                            <p>Macedonia</p>
+                                            <p>Brazil</p>
+                                        </div>
+                                        <div class="game-card__result">
+                                            <div class="game-card__set">
+                                                <div
+                                                    class="game-card__set--winner"
+                                                >
+                                                    3
+                                                </div>
+                                                <div>0</div>
+                                            </div>
+                                            <div class="game-card__set">
+                                                <div
+                                                    class="game-card__set--winner"
+                                                >
+                                                    25
+                                                </div>
+                                                <div>23</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="current-result-card__additional-info"
+                                    >
+                                        <p>
+                                            Serve:
+                                            <span>Nikola Gjorgiev, 4</span>
+                                        </p>
+                                        <p>Type of point: <span>Ace</span></p>
+                                        <p>
+                                            Point won by:
+                                            <span>Nikola Gjorgiev, 4</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card current-result-card">
+                                <div class="current-result-card__content">
+                                    <div
+                                        class="current-result-card__result-board"
+                                    >
+                                        <div
+                                            class="current-result-card__result-board-teams"
+                                        >
+                                            <p>Macedonia</p>
+                                            <p>Brazil</p>
+                                        </div>
+                                        <div class="game-card__result">
+                                            <div class="game-card__set">
+                                                <div
+                                                    class="game-card__set--winner"
+                                                >
+                                                    2
+                                                </div>
+                                                <div>0</div>
+                                            </div>
+                                            <div class="game-card__set">
+                                                <div
+                                                    class="game-card__set--winner"
+                                                >
+                                                    24
+                                                </div>
+                                                <div>23</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="current-result-card__additional-info"
+                                    >
+                                        <p>
+                                            Serve:
+                                            <span>Nikola Gjorgiev, 4</span>
+                                        </p>
+                                        <p>Type of point: <span>Ace</span></p>
+                                        <p>
+                                            Point won by:
+                                            <span>Nikola Gjorgiev, 4</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card current-result-card">
+                                <div class="current-result-card__content">
+                                    <div
+                                        class="current-result-card__result-board"
+                                    >
+                                        <div
+                                            class="current-result-card__result-board-teams"
+                                        >
+                                            <p>Macedonia</p>
+                                            <p>Brazil</p>
+                                        </div>
+                                        <div class="game-card__result">
+                                            <div class="game-card__set">
+                                                <div
+                                                    class="game-card__set--winner"
+                                                >
+                                                    2
+                                                </div>
+                                                <div>0</div>
+                                            </div>
+                                            <div class="game-card__set">
+                                                <div
+                                                    class="game-card__set--winner"
+                                                >
+                                                    23
+                                                </div>
+                                                <div>23</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="current-result-card__additional-info"
+                                    >
+                                        <p>
+                                            Serve:
+                                            <span>Wallace De Souza, 3</span>
+                                        </p>
+                                        <p>Type of point: <span>Block</span></p>
+                                        <p>
+                                            Point won by:
+                                            <span>Risto Nikolov, 3</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card current-result-card">
+                                <div class="current-result-card__content">
+                                    <div
+                                        class="current-result-card__result-board"
+                                    >
+                                        <div
+                                            class="current-result-card__result-board-teams"
+                                        >
+                                            <p>Macedonia</p>
+                                            <p>Brazil</p>
+                                        </div>
+                                        <div class="game-card__result">
+                                            <div class="game-card__set">
+                                                <div
+                                                    class="game-card__set--winner"
+                                                >
+                                                    2
+                                                </div>
+                                                <div>0</div>
+                                            </div>
+                                            <div class="game-card__set">
+                                                <div>22</div>
+                                                <div
+                                                    class="game-card__set--winner"
+                                                >
+                                                    23
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="current-result-card__additional-info"
+                                    >
+                                        <p>
+                                            Serve: <span>Vlado Milev, 6</span>
+                                        </p>
+                                        <p>
+                                            Type of point: <span>Attack</span>
+                                        </p>
+                                        <p>
+                                            Point won by:
+                                            <span>Lucas Saatkamp, 8</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card current-result-card">
+                                <div class="current-result-card__content">
+                                    <div
+                                        class="current-result-card__result-board"
+                                    >
+                                        <div
+                                            class="current-result-card__result-board-teams"
+                                        >
+                                            <p>Macedonia</p>
+                                            <p>Brazil</p>
+                                        </div>
+                                        <div class="game-card__result">
+                                            <div class="game-card__set">
+                                                <div
+                                                    class="game-card__set--winner"
+                                                >
+                                                    2
+                                                </div>
+                                                <div>0</div>
+                                            </div>
+                                            <div class="game-card__set">
+                                                <div
+                                                    class="game-card__set--winner"
+                                                >
+                                                    22
+                                                </div>
+                                                <div>22</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="current-result-card__additional-info"
+                                    >
+                                        <p>
+                                            Serve: <span>Bruno Rezende, 1</span>
+                                        </p>
+                                        <p>
+                                            Type of point: <span>Attack</span>
+                                        </p>
+                                        <p>
+                                            Point won by:
+                                            <span>Aleksandar Ljaftov, 8</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <button>Show more</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+        <%- include("./partials/footer"); %>
+    </body>
+</html>

@@ -1,0 +1,130 @@
+@use "../utilities" as u;
+
+.navigation {
+    background-color: u.$secondary-blue-color;
+    height: 6rem;
+    position: sticky;
+    top: 0px;
+    z-index: 3;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        padding: 0 5%;
+    }
+
+    &__logo {
+        font-weight: bold;
+        font-size: 1.8rem;
+    }
+
+    &__list {
+        display: flex;
+        flex-grow: 1;
+
+        @include u.breakpoint-down(medium) {
+            background: u.$primary-blue-color;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 100%;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: transform 1s ease;
+        }
+
+        li {
+            margin-right: 3rem;
+
+            @include u.breakpoint-down(medium) {
+                margin: 1rem 0;
+            }
+        }
+
+        a {
+            font-size: 1.3rem;
+
+            @include u.breakpoint-down(medium) {
+                // color: white;
+                font-size: 2rem;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__list li:nth-child(3) {
+        margin-right: 0;
+    }
+
+    &__list li:first-child {
+        margin-left: auto;
+
+        @include u.breakpoint-down(medium) {
+            margin-left: 0;
+        }
+    }
+
+    &__list li:last-child {
+        margin-left: auto;
+        margin-right: 0;
+
+        @include u.breakpoint-down(medium) {
+            margin-left: 0;
+        }
+
+        a {
+            text-decoration: underline;
+        }
+    }
+}
+
+.burger {
+    display: none;
+
+    @include u.breakpoint-down(medium) {
+        // background-color: red;
+        position: relative;
+        display: block;
+        cursor: pointer;
+    }
+}
+
+.burger span {
+    @include u.breakpoint-down(medium) {
+        padding: 0.15rem 1.5rem;
+        background: u.$heading-text-color;
+        margin: 0.5rem 0rem;
+        display: block;
+        transition: transform 0.5s ease;
+    }
+}
+
+.nav-open {
+    @include u.breakpoint-down(medium) {
+        transform: translateX(-100%);
+    }
+}
+
+.toggle .line1 {
+    @include u.breakpoint-down(medium) {
+        transform: rotateZ(45deg) translateY(300%);
+        background: u.$heading-text-color;
+    }
+}
+
+.toggle .line2 {
+    @include u.breakpoint-down(medium) {
+        opacity: 0;
+    }
+}
+
+.toggle .line3 {
+    @include u.breakpoint-down(medium) {
+        transform: rotateZ(-45deg) translateY(-400%);
+        background: u.$heading-text-color;
+    }
+}

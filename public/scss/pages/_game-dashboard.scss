@@ -1,0 +1,47 @@
+@use "../utilities" as u;
+
+.container.dashboard {
+    // background-color: red;
+    @include u.breakpoint-up(large) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+}
+
+.dashboard__column {
+    .card {
+        font-weight: bold;
+        margin-bottom: 2rem;
+
+        h2 {
+            margin-bottom: 2rem;
+        }
+    }
+
+    h2 {
+        margin-bottom: 1rem;
+    }
+
+    .label-input {
+        margin-right: 1.8rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+
+        span {
+            font-weight: normal;
+        }
+    }
+
+    .call-time-out {
+        p {
+            display: inline-block;
+
+            &:first-child {
+                margin-right: 2rem;
+            }
+        }
+    }
+}

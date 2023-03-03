@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/header"); %>
+    <body>
+        <%- include("./partials/navigation bar"); %>
+        <main>
+            <div class="container">
+                <div class="card card-add-team">
+                    <div class="top-of-form">
+                        <span class="btnSecondary"><%= formNumber %>/5</span>
+                        <% if( formNumber == 2){ %>
+                        <h2 class="card__title">Team <%= teamName[0] %></h2>
+                        <% } else if (formNumber == 3){ %>
+                        <h2 class="card__title">Team <%= teamName[1] %></h2>
+                        <% } %>
+                    </div>
+                    <%- include("./partials/messages"); %>
+                    <form action="/addnewgame/addteams" method="post">
+                        <input
+                            type="hidden"
+                            name="formNumber"
+                            value="<%= formNumber %>"
+                        />
+                        <input
+                            type="hidden"
+                            name="numberOfPlayers"
+                            value="<%= numberOfPlayers %>"
+                        />
+                        <% for (let i = 0; i < 2; i++){ %>
+                        <input
+                            type="hidden"
+                            name="teamName"
+                            value="<%= teamName[i] %>"
+                        />
+                        <input
+                            type="hidden"
+                            name="teamId"
+                            value="<%= teamId[i] %>"
+                        />
+                        <% } %> <% for (let i = 0; i < 8; i++){ %>
+                        <input
+                            type="hidden"
+                            name="gameAttributes"
+                            value="<%= gameAttributes[i] %>"
+                        />
+                        <% } %> <% if (formNumber == 3){ %> <% for (let i = 0; i
+                        < numberOfPlayers; i++){ %>
+                        <input
+                            type="hidden"
+                            name="firstTeamPlayerId"
+                            value="<%= firstTeamPlayerId[i] %>"
+                        />
+                        <input
+                            type="hidden"
+                            name="firstTeamPlayerJersey"
+                            value="<%= firstTeamPlayerJersey[i] %>"
+                        />
+                        <input
+                            type="hidden"
+                            name="firstTeamPlayerFirstName"
+                            value="<%= firstTeamPlayerFirstName[i] %>"
+                        />
+                        <input
+                            type="hidden"
+                            name="firstTeamPlayerLastName"
+                            value="<%= firstTeamPlayerLastName[i] %>"
+                        />
+                        <input
+                            type="hidden"
+                            name="firstTeamPlayerPosition"
+                            value="<%= firstTeamPlayerPosition[i] %>"
+                        />
+                        <% } %> <% for (let i = 0; i < 3; i++){ %>
+                        <input
+                            type="hidden"
+                            name="firstTeamStaffId"
+                            value="<%= firstTeamStaffId[i] %>"
+                        />
+                        <input
+                            type="hidden"
+                            name="firstTeamStaffFirstName"
+                            value="<%= firstTeamStaffFirstName[i] %>"
+                        />
+                        <input
+                            type="hidden"
+                            name="firstTeamStaffLastName"
+                            value="<%= firstTeamStaffLastName[i] %>"
+                        />
+                        <% } %> <% } %>
+                        <h4>Head coach</h4>
+                        <div class="head-coach">
+                            <div>
+                                <label for="headCoachFirstName"
+                                    >First name</label
+                                ><br />
+                                <input
+                                    type="text"
+                                    name="staffFirstName"
+                                    id="headCoachFirstName"
+                                    value="<%= typeof staffFirstName != 'undefined' ? staffFirstName[0] : '' %>"
+                                /><br />
+                            </div>
+                            <div>
+                                <label for="headCoachLastName">Last name</label
+                                ><br />
+                                <input
+                                    type="text"
+                                    name="staffLastName"
+                                    id="headCoachLastName"
+                                    value="<%= typeof staffLastName != 'undefined' ? staffLastName[0] : '' %>"
+                                /><br />
+                            </div>
+                            <div>
+                                <label for="headCoachBirthDate"
+                                    >Birth date</label
+                                ><br />
+                                <input
+                                    class="birth-date-input"
+                                    type="date"
+                                    name="staffBirthDate"
+                                    id="headCoachBirthDate"
+                                    value="<%= typeof staffBirthDate != 'undefined' ? staffBirthDate[0] : '' %>"
+                                /><br />
+                            </div>
+                        </div>
+                        <h4>Second coach</h4>
+                        <div class="second-coach">
+                            <div>
+                                <label for="secondCoachFirstName"
+                                    >First name</label
+                                ><br />
+                                <input
+                                    type="text"
+                                    name="staffFirstName"
+                                    id="secondCoachFirstName"
+                                    value="<%= typeof staffFirstName != 'undefined' ? staffFirstName[1] : '' %>"
+                                /><br />
+                            </div>
+                            <div>
+                                <label for="secondCoachLastName"
+                                    >Last name</label
+                                ><br />
+                                <input
+                                    type="text"
+                                    name="staffLastName"
+                                    id="secondCoachLastName"
+                                    value="<%= typeof staffLastName != 'undefined' ? staffLastName[1] : '' %>"
+                                /><br />
+                            </div>
+                            <div>
+                                <label for="secondCoachBirthDate"
+                                    >Birth date</label
+                                ><br />
+                                <input
+                                    class="birth-date-input"
+                                    type="date"
+                                    name="staffBirthDate"
+                                    id="secondCoachBirthDate"
+                                    value="<%= typeof staffBirthDate != 'undefined' ? staffBirthDate[1] : '' %>"
+                                /><br />
+                            </div>
+                        </div>
+                        <h4>Team doctor</h4>
+                        <div class="team-doctor">
+                            <div>
+                                <label for="teamDoctorFirstName"
+                                    >First name</label
+                                ><br />
+                                <input
+                                    type="text"
+                                    name="staffFirstName"
+                                    id="teamDoctorFirstName"
+                                    value="<%= typeof staffFirstName != 'undefined' ? staffFirstName[2] : '' %>"
+                                /><br />
+                            </div>
+                            <div>
+                                <label for="teamDoctorLastName">Last name</label
+                                ><br />
+                                <input
+                                    type="text"
+                                    name="staffLastName"
+                                    id="teamDoctorLastName"
+                                    value="<%= typeof staffLastName != 'undefined' ? staffLastName[2] : '' %>"
+                                /><br />
+                            </div>
+                            <div>
+                                <label for="teamDoctorBirthDate"
+                                    >Birth date</label
+                                ><br />
+                                <input
+                                    class="birth-date-input"
+                                    type="date"
+                                    name="staffBirthDate"
+                                    id="teamDoctorBirthDate"
+                                    value="<%= typeof staffBirthDate != 'undefined' ? staffBirthDate[2] : '' %>"
+                                /><br />
+                            </div>
+                        </div>
+                        <h4>Players</h4>
+                        <% for (let i = 0; i < numberOfPlayers; i++){ %>
+                        <div class="players">
+                            <div>
+                                <% if(i==0){ %>
+                                <h4 class="show-always">Player</h4>
+                                <% } else { %>
+                                <h4>Player</h4>
+                                <% } %>
+                                <span class="player-number"><%= i+1 %></span>
+                            </div>
+                            <div>
+                                <% if(i==0){ %>
+                                <label
+                                    class="show-always"
+                                    for="<%= 'player' + (i+1) + 'Jersey' %>"
+                                    >Jersey</label
+                                >
+                                <% } else { %>
+                                <label for="<%= 'player' + (i+1) + 'Jersey' %>"
+                                    >Jersey</label
+                                >
+                                <% } %>
+                                <input
+                                    class="jersey-input"
+                                    type="number"
+                                    name="playerJersey"
+                                    id="<%= 'player' + (i+1) + 'Jersey' %>"
+                                    min="0"
+                                    max="100"
+                                    value="<%= typeof playerJersey != 'undefined' ? playerJersey[i] : '' %>"
+                                />
+                            </div>
+                            <div>
+                                <% if(i==0){ %>
+                                <label
+                                    class="show-always"
+                                    for="<%= 'player' + (i+1) + 'FirstName' %>"
+                                    >First name</label
+                                >
+                                <% } else { %>
+                                <label
+                                    for="<%= 'player' + (i+1) + 'FirstName' %>"
+                                    >First name</label
+                                >
+                                <% } %>
+                                <input
+                                    type="text"
+                                    name="playerFirstName"
+                                    id="<%= 'player' + (i+1) + 'FirstName' %>"
+                                    value="<%= typeof playerFirstName != 'undefined' ? playerFirstName[i] : '' %>"
+                                />
+                            </div>
+                            <div>
+                                <% if(i==0){ %>
+                                <label
+                                    class="show-always"
+                                    for="<%= 'player' + (i+1) + 'LastName' %>"
+                                    >Last name</label
+                                >
+                                <% } else { %>
+                                <label
+                                    for="<%= 'player' + (i+1) + 'LastName' %>"
+                                    >Last name</label
+                                >
+                                <% } %>
+                                <input
+                                    type="text"
+                                    name="playerLastName"
+                                    id="<%= 'player' + (i+1) + 'LastName' %>"
+                                    value="<%= typeof playerLastName != 'undefined' ? playerLastName[i] : '' %>"
+                                />
+                            </div>
+                            <div>
+                                <% if(i==0){ %>
+                                <label
+                                    class="show-always"
+                                    for="<%= 'player' + (i+1) + 'Position' %>"
+                                    >Position</label
+                                >
+                                <% } else { %>
+                                <label
+                                    for="<%= 'player' + (i+1) + 'Position' %>"
+                                    >Position</label
+                                >
+                                <% } %>
+                                <select
+                                    name="playerPosition"
+                                    id="<%= 'player' + (i+1) + 'Position' %>"
+                                >
+                                    <option value="Outside hitter">
+                                        Outside hitter
+                                    </option>
+                                    <option value="Opposite">Opposite</option>
+                                    <option value="Middle blocker">
+                                        Middle blocker
+                                    </option>
+                                    <option value="Setter">Setter</option>
+                                    <option value="Libero">Libero</option>
+                                </select>
+                            </div>
+                            <div>
+                                <% if(i==0){ %>
+                                <label
+                                    class="show-always"
+                                    for="<%= 'player' + (i+1) + 'BirthDate' %>"
+                                    >Birth date</label
+                                >
+                                <% } else { %>
+                                <label
+                                    for="<%= 'player' + (i+1) + 'BirthDate' %>"
+                                    >Birth date</label
+                                >
+                                <% } %>
+                                <input
+                                    class="birth-date-input"
+                                    type="date"
+                                    name="playerBirthDate"
+                                    id="<%= 'player' + (i+1) + 'BirthDate' %>"
+                                    value="<%= typeof playerBirthDate != 'undefined' ? playerBirthDate[i] : '' %>"
+                                />
+                            </div>
+                            <div>
+                                <% if(i==0){ %>
+                                <label
+                                    class="show-always"
+                                    for="<%= 'player' + (i+1) + 'Height' %>"
+                                    >Height</label
+                                >
+                                <% } else { %>
+                                <label for="<%= 'player' + (i+1) + 'Height' %>"
+                                    >Height</label
+                                >
+                                <% } %>
+                                <input
+                                    class="height-input"
+                                    type="number"
+                                    name="playerHeight"
+                                    id="<%= 'player' + (i+1) + 'Height' %>"
+                                    min="130"
+                                    max="240"
+                                    value="<%= typeof playerHeight != 'undefined' ? playerHeight[i] : '' %>"
+                                />
+                            </div>
+                        </div>
+                        <% } %>
+                        <button class="btnPrimary" type="submit">Next</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <%- include("./partials/footer"); %>
+    </body>
+</html>

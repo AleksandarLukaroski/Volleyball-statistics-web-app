@@ -1,0 +1,65 @@
+@use "../utilities" as u;
+
+.card-starting-lineup {
+    max-width: 80rem;
+    margin: 0 auto;
+
+    // background-color: red;
+
+    .first-line {
+        display: flex;
+        flex-wrap: wrap;
+
+        div {
+            label {
+                display: block;
+
+                @media screen and (min-width: 50em) {
+                    display: none;
+                }
+            }
+
+            label.show-always {
+                @media screen and (min-width: 50em) {
+                    display: block;
+                }
+            }
+        }
+
+        div:first-child {
+            margin-right: 0.5rem;
+
+            span {
+                display: inline-block;
+            }
+        }
+    }
+
+    .position-label {
+        margin-bottom: 0.5rem;
+        display: block;
+        // background-color: red;
+    }
+
+    .position-number {
+        margin-right: 1rem;
+        margin-bottom: 1rem;
+        padding: 0.8rem 3.5rem;
+        background-color: u.$green-accent-color;
+        border-radius: 50px;
+        font-size: 1.7rem;
+        font-weight: bold;
+    }
+
+    select {
+        width: 28rem;
+
+        @include u.breakpoint-up(medium) {
+            width: 46rem;
+        }
+    }
+
+    .libero-label {
+        margin-top: 2rem;
+    }
+}

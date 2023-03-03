@@ -1,0 +1,20 @@
+<nav class="navigation">
+    <div class="container">
+        <div class="navigation__logo"><a href="/">Volleyball Master</a></div>
+        <ul class="navigation__list">
+            <li><a href="/livegames">Live games</a></li>
+            <li><a href="/completedgames">Completed games</a></li>
+            <li><a href="/#contact">Contact</a></li>
+            <% if(typeof username != 'undefined'){ %>
+            <li><a href="/mygames"><%= username %></a></li>
+            <% } else{ %>
+            <li><a href="/users/login">Login</a></li>
+            <% } %>
+        </ul>
+        <div class="burger">
+            <span class="line1"></span>
+            <span class="line2"></span>
+            <span class="line3"></span>
+        </div>
+    </div>
+</nav>

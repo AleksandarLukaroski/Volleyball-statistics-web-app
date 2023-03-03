@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/header"); %>
+    <body>
+        <%- include("./partials/navigation bar"); %>
+        <main>
+            <div class="container">
+                <div class="card card-starting-lineup">
+                    <div class="top-of-form">
+                        <span class="btnSecondary"><%= formNumber %>/5</span>
+                        <% if( formNumber == 4){ %>
+                        <h2 class="card__title">
+                            Starting lineup for team <%= teamName[0] %>
+                        </h2>
+                        <% } else if (formNumber == 5){ %>
+                        <h2 class="card__title">
+                            Starting lineup for team <%= teamName[1] %>
+                        </h2>
+                        <% } %>
+                    </div>
+                    <form action="/addnewgame/startinglineup" method="post">
+                        <input
+                            type="hidden"
+                            name="formNumber"
+                            value="<%= formNumber %>"
+                        />
+                        <input
+                            type="hidden"
+                            name="numberOfPlayers"
+                            value="<%= numberOfPlayers %>"
+                        />
+                        <% for (let i = 0; i < 2; i++){ %>
+                        <input
+                            type="hidden"
+                            name="teamName"
+                            value="<%= teamName[i] %>"
+                        />
+                        <input
+                            type="hidden"
+                            name="teamId"
+                            value="<%= teamId[i] %>"
+                        />
+                        <% } %> <% for (let i = 0; i < 8; i++){ %>
+                        <input
+                            type="hidden"
+                            name="gameAttributes"
+                            value="<%= gameAttributes[i] %>"
+                        />
+                        <% } %> <% for (let i = 0; i < numberOfPlayers; i++){ %>
+                        <input
+                            type="hidden"
+                            name="firstTeamPlayerId"
+                            value="<%= firstTeamPlayerId[i] %>"
+                        />
+                        <input
+                            type="hidden"
+                            name="firstTeamPlayerJersey"
+                            value="<%= firstTeamPlayerJersey[i] %>"
+                        />
+                        <input
+                            type="hidden"
+                            name="firstTeamPlayerFirstName"
+                            value="<%= firstTeamPlayerFirstName[i] %>"
+                        />
+                        <input
+                            type="hidden"
+                            name="firstTeamPlayerLastName"
+                            value="<%= firstTeamPlayerLastName[i] %>"
+                        />
+                        <input
+                            type="hidden"
+                            name="firstTeamPlayerPosition"
+                            value="<%= firstTeamPlayerPosition[i] %>"
+                        />
+                        <input
+                            type="hidden"
+                            name="secondTeamPlayerId"
+                            value="<%= secondTeamPlayerId[i] %>"
+                        />
+                        <input
+                            type="hidden"
+                            name="secondTeamPlayerJersey"
+                            value="<%= secondTeamPlayerJersey[i] %>"
+                        />
+                        <input
+                            type="hidden"
+                            name="secondTeamPlayerFirstName"
+                            value="<%= secondTeamPlayerFirstName[i] %>"
+                        />
+                        <input
+                            type="hidden"
+                            name="secondTeamPlayerLastName"
+                            value="<%= secondTeamPlayerLastName[i] %>"
+                        />
+                        <input
+                            type="hidden"
+                            name="secondTeamPlayerPosition"
+                            value="<%= secondTeamPlayerPosition[i] %>"
+                        />
+                        <% } %> <% for (let i = 0; i < 3; i++){ %>
+                        <input
+                            type="hidden"
+                            name="firstTeamStaffId"
+                            value="<%= firstTeamStaffId[i] %>"
+                        />
+                        <input
+                            type="hidden"
+                            name="firstTeamStaffFirstName"
+                            value="<%= firstTeamStaffFirstName[i] %>"
+                        />
+                        <input
+                            type="hidden"
+                            name="firstTeamStaffLastName"
+                            value="<%= firstTeamStaffLastName[i] %>"
+                        />
+                        <input
+                            type="hidden"
+                            name="secondTeamStaffId"
+                            value="<%= secondTeamStaffId[i] %>"
+                        />
+                        <input
+                            type="hidden"
+                            name="secondTeamStaffFirstName"
+                            value="<%= secondTeamStaffFirstName[i] %>"
+                        />
+                        <input
+                            type="hidden"
+                            name="secondTeamStaffLastName"
+                            value="<%= secondTeamStaffLastName[i] %>"
+                        />
+                        <% } %> <% if (formNumber == 5){ %> <% for (let i = 0; i
+                        < 6; i++){ %>
+                        <input
+                            type="hidden"
+                            name="firstTeamCourtPosition"
+                            value="<%= firstTeamCourtPosition[i] %>"
+                        />
+                        <% }} %> <% if( formNumber == 4){ %> <% for (let i = 0;
+                        i < 6; i++){ %>
+                        <div class="first-line">
+                            <div>
+                                <% if( i == 0){ %>
+                                <label class="position-label show-always"
+                                    >Position</label
+                                >
+                                <% } else{ %>
+                                <label class="position-label">Position</label>
+                                <% } %>
+                                <span class="position-number"><%= i+1 %></span>
+                            </div>
+                            <div>
+                                <% if( i == 0){ %>
+                                <label
+                                    for="<%= 'courtPosition' + (i+1) %>"
+                                    class="show-always"
+                                    >Player</label
+                                >
+                                <% } else{ %>
+                                <label for="<%= 'courtPosition' + (i+1) %>"
+                                    >Player</label
+                                >
+                                <% } %>
+                                <select
+                                    name="courtPosition"
+                                    id="<%= 'courtPosition' + (i+1) %>"
+                                >
+                                    <% for (let j = 0; j < numberOfPlayers;
+                                    j++){ %>
+                                    <option value="<%= firstTeamPlayerId[j] %>">
+                                        <%= firstTeamPlayerFirstName[j] %> <%=
+                                        firstTeamPlayerLastName[j] %>, <%=
+                                        firstTeamPlayerJersey[j] %>, <%=
+                                        firstTeamPlayerPosition[j] %>
+                                    </option>
+                                    <% } %>
+                                </select>
+                            </div>
+                        </div>
+                        <% } %> <% } else if( formNumber == 5){ %> <% for (let i
+                        = 0; i < 6; i++){ %>
+                        <div class="first-line">
+                            <div>
+                                <% if( i == 0){ %>
+                                <label class="position-label show-always"
+                                    >Position</label
+                                >
+                                <% } else{ %>
+                                <label class="position-label">Position</label>
+                                <% } %>
+                                <span class="position-number"><%= i+1 %></span>
+                            </div>
+                            <div>
+                                <% if( i == 0){ %>
+                                <label
+                                    for="<%= 'courtPosition' + (i+1) %>"
+                                    class="show-always"
+                                    >Player</label
+                                >
+                                <% } else{ %>
+                                <label for="<%= 'courtPosition' + (i+1) %>"
+                                    >Player</label
+                                >
+                                <% } %>
+                                <select
+                                    name="courtPosition"
+                                    id="<%= 'courtPosition' + (i+1) %>"
+                                >
+                                    <% for (let j = 0; j < numberOfPlayers;
+                                    j++){ %>
+                                    <option
+                                        value="<%= secondTeamPlayerId[j] %>"
+                                    >
+                                        <%= secondTeamPlayerFirstName[j] %> <%=
+                                        secondTeamPlayerLastName[j] %>, <%=
+                                        secondTeamPlayerJersey[j] %>, <%=
+                                        secondTeamPlayerPosition[j] %>
+                                    </option>
+                                    <% } %>
+                                </select>
+                            </div>
+                        </div>
+                        <% }} %> <% if(submitButtonText != ''){ %>
+                        <button class="btnPrimary" type="submit">
+                            <%= submitButtonText %>
+                        </button>
+                        <% } %>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <%- include("./partials/footer"); %>
+    </body>
+</html>

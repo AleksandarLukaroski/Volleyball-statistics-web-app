@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/header"); %>
+    <body>
+        <%- include("./partials/navigation bar"); %>
+        <main>
+            <div class="container">
+                <div class="card card-register">
+                    <h2 class="card__title">Register</h2>
+                    <%- include("./partials/messages"); %>
+                    <form action="/users/register" method="post">
+                        <label for="firstName">First name</label><br />
+                        <input
+                            type="text"
+                            id="firstName"
+                            name="firstName"
+                            value="<%= typeof firstName != 'undefined' ? firstName : '' %>"
+                        /><br />
+                        <label for="lastName">Last name</label><br />
+                        <input
+                            type="text"
+                            id="lastName"
+                            name="lastName"
+                            value="<%= typeof lastName != 'undefined' ? lastName : '' %>"
+                        /><br />
+                        <label for="email">Email</label><br />
+                        <input
+                            type="email"
+                            name="email"
+                            id="email"
+                            value="<%= typeof email != 'undefined' ? email : '' %>"
+                        /><br />
+                        <label for="password">Password</label><br />
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            value="<%= typeof password != 'undefined' ? password : '' %>"
+                        /><br />
+                        <label for="password2">Confirm password</label><br />
+                        <input
+                            type="password"
+                            id="password2"
+                            name="password2"
+                            value="<%= typeof password2 != 'undefined' ? password2 : '' %>"
+                        /><br />
+                        <button class="btnPrimary" type="submit">
+                            Register
+                        </button>
+                        <p class="login-paragraph">
+                            Have an account already?<a href="/users/login">
+                                Login here</a
+                            >
+                        </p>
+                    </form>
+                    <hr />
+                    <a class="btnSecondary" href="#"
+                        ><img
+                            src="../media/Icons svg/Icon awesome-google.svg"
+                            alt="Google icon"
+                            class="google-icon"
+                        />Register with Google</a
+                    >
+                    <a class="btnSecondary" href="#"
+                        ><img
+                            src="../media/Icons svg/Icon awesome-twitter-square.svg"
+                            alt="Twitter icon"
+                            class="twitter-icon"
+                        />Register with Twitter</a
+                    >
+                    <a class="btnSecondary" href="#"
+                        ><img
+                            src="../media/Icons svg/Icon metro-facebook.svg"
+                            alt="Facebook icon"
+                            class="facebook-icon"
+                        />Register with Facebook</a
+                    >
+                </div>
+            </div>
+        </main>
+        <%- include("./partials/footer"); %>
+    </body>
+</html>

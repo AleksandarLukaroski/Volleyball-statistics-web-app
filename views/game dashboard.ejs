@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/header"); %>
+    <body>
+        <%- include("./partials/navigation bar"); %>
+        <main>
+            <div class="container dashboard">
+                <div class="dashboard__column">
+                    <%- include("./partials/messages"); %>
+                    <br />
+                    <div class="card current-result-card">
+                        <h2>Current result</h2>
+                        <div class="current-result-card__content">
+                            <div class="current-result-card__result-board">
+                                <div
+                                    class="current-result-card__result-board-teams"
+                                >
+                                    <p><%= teamName[0] %></p>
+                                    <p><%= teamName[1] %></p>
+                                </div>
+                                <div class="game-card__result">
+                                    <div class="game-card__set">
+                                        <% if(resultInSets[0] >
+                                        resultInSets[1]){ %>
+                                        <div class="game-card__set--winner">
+                                            <%= resultInSets[0] %>
+                                        </div>
+                                        <div><%= resultInSets[1] %></div>
+                                        <% } else if(resultInSets[1] >
+                                        resultInSets[0]){ %>
+                                        <div><%= resultInSets[0] %></div>
+                                        <div class="game-card__set--winner">
+                                            <%= resultInSets[1] %>
+                                        </div>
+                                        <% } else { %>
+                                        <div><%= resultInSets[0] %></div>
+                                        <div><%= resultInSets[1] %></div>
+                                        <% } %>
+                                    </div>
+                                    <div class="game-card__set">
+                                        <% if(previousPointWonByTeam ==
+                                        teamId[0]){ %>
+                                        <div class="game-card__set--winner">
+                                            <%= currentSetResult[0] %>
+                                        </div>
+                                        <div><%= currentSetResult[1] %></div>
+                                        <% } else{ %>
+                                        <div><%= currentSetResult[0] %></div>
+                                        <div class="game-card__set--winner">
+                                            <%= currentSetResult[1] %>
+                                        </div>
+                                        <% } %>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="current-result-card__additional-info">
+                                <p>
+                                    Current set:
+                                    <span
+                                        ><%= (parseInt(resultInSets[0]) +
+                                        parseInt(resultInSets[1])) +1 %></span
+                                    >
+                                </p>
+                                <p>Set duration: <span>20min</span></p>
+                                <p>Game duration: <span>1h 20min</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <form
+                            action="<%= '/addnewgame/gamedashboard/' + gameAttributes[7] %>"
+                            method="post"
+                        >
+                            <input
+                                type="hidden"
+                                name="formNumber"
+                                value="<%= formNumber %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="numberOfPlayers"
+                                value="<%= numberOfPlayers %>"
+                            />
+                            <% for (let i = 0; i < 2; i++){ %>
+                            <input
+                                type="hidden"
+                                name="teamName"
+                                value="<%= teamName[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="teamId"
+                                value="<%= teamId[i] %>"
+                            />
+                            <% } %> <% for (let i = 0; i < 8; i++){ %>
+                            <input
+                                type="hidden"
+                                name="gameAttributes"
+                                value="<%= gameAttributes[i] %>"
+                            />
+                            <% } %> <% for (let i = 0; i < numberOfPlayers;
+                            i++){ %>
+                            <input
+                                type="hidden"
+                                name="firstTeamPlayerId"
+                                value="<%= firstTeamPlayerId[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="firstTeamPlayerJersey"
+                                value="<%= firstTeamPlayerJersey[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="firstTeamPlayerFirstName"
+                                value="<%= firstTeamPlayerFirstName[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="firstTeamPlayerLastName"
+                                value="<%= firstTeamPlayerLastName[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="firstTeamPlayerPosition"
+                                value="<%= firstTeamPlayerPosition[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="secondTeamPlayerId"
+                                value="<%= secondTeamPlayerId[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="secondTeamPlayerJersey"
+                                value="<%= secondTeamPlayerJersey[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="secondTeamPlayerFirstName"
+                                value="<%= secondTeamPlayerFirstName[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="secondTeamPlayerLastName"
+                                value="<%= secondTeamPlayerLastName[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="secondTeamPlayerPosition"
+                                value="<%= secondTeamPlayerPosition[i] %>"
+                            />
+                            <% } %> <% for (let i = 0; i < 3; i++){ %>
+                            <input
+                                type="hidden"
+                                name="firstTeamStaffId"
+                                value="<%= firstTeamStaffId[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="firstTeamStaffFirstName"
+                                value="<%= firstTeamStaffFirstName[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="firstTeamStaffLastName"
+                                value="<%= firstTeamStaffLastName[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="secondTeamStaffId"
+                                value="<%= secondTeamStaffId[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="secondTeamStaffFirstName"
+                                value="<%= secondTeamStaffFirstName[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="secondTeamStaffLastName"
+                                value="<%= secondTeamStaffLastName[i] %>"
+                            />
+                            <% } %> <% for (let i = 0; i < 6; i++){ %>
+                            <input
+                                type="hidden"
+                                name="firstTeamCourtPosition"
+                                value="<%= firstTeamCourtPosition[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="secondTeamCourtPosition"
+                                value="<%= secondTeamCourtPosition[i] %>"
+                            />
+                            <% } %>
+
+                            <input
+                                type="hidden"
+                                name="formName"
+                                value="addNewPoint"
+                            />
+                            <input
+                                type="hidden"
+                                name="setId"
+                                value="<%= setId %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="previousPointWonByTeam"
+                                value="<%= previousPointWonByTeam %>"
+                            />
+                            <% for (let i = 0; i < 2; i++){ %>
+                            <input
+                                type="hidden"
+                                name="resultInSets"
+                                value="<%= resultInSets[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="currentSetResult"
+                                value="<%= currentSetResult[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="timeoutsLeft"
+                                value="<%= timeoutsLeft[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="substitutionsLeft"
+                                value="<%= substitutionsLeft[i] %>"
+                            />
+                            <% } %>
+                            <h2>Add new point</h2>
+                            <!-- <h2>Game ID is: <%= gameAttributes[7] %></h2> -->
+                            <div class="label-input">
+                                <label for="addNewPointTeam">Team</label><br />
+                                <select name="teamIndex" id="addNewPointTeam">
+                                    <option value="0">
+                                        <%= teamName[0] %>
+                                    </option>
+                                    <option value="1">
+                                        <%= teamName[1] %>
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="label-input">
+                                <label for="typeOfPoint">Type of point</label
+                                ><br />
+                                <select name="typeOfPoint">
+                                    <option value="Attack">Attack</option>
+                                    <option value="Block">Block</option>
+                                    <option value="Block out">Block out</option>
+                                    <option value="Ace">Ace</option>
+                                    <option value="Error">Error</option>
+                                </select>
+                            </div>
+                            <div class="label-input">
+                                <label>Player</label><br />
+                                <select
+                                    name="player"
+                                    id="addNewPointFirstTeamPlayers"
+                                >
+                                    <% for (let i = 0; i < 6; i++){ %>
+                                    <option
+                                        value="<%= firstTeamCourtPosition[i] %>"
+                                    >
+                                        <%=
+                                        firstTeamPlayerFirstName[firstTeamPlayerId.indexOf(firstTeamCourtPosition[i])]
+                                        %> <%=
+                                        firstTeamPlayerLastName[firstTeamPlayerId.indexOf(firstTeamCourtPosition[i])]
+                                        %>, <%=
+                                        firstTeamPlayerJersey[firstTeamPlayerId.indexOf(firstTeamCourtPosition[i])]
+                                        %>, <%=
+                                        firstTeamPlayerPosition[firstTeamPlayerId.indexOf(firstTeamCourtPosition[i])]
+                                        %>
+                                    </option>
+                                    <% } %>
+                                </select>
+                                <select
+                                    name="player"
+                                    id="addNewPointSecondTeamPlayers"
+                                    class="hide"
+                                >
+                                    <% for (let i = 0; i < 6; i++){ %>
+                                    <option
+                                        value="<%= secondTeamCourtPosition[i] %>"
+                                    >
+                                        <%=
+                                        secondTeamPlayerFirstName[secondTeamPlayerId.indexOf(secondTeamCourtPosition[i])]
+                                        %> <%=
+                                        secondTeamPlayerLastName[secondTeamPlayerId.indexOf(secondTeamCourtPosition[i])]
+                                        %>, <%=
+                                        secondTeamPlayerJersey[secondTeamPlayerId.indexOf(secondTeamCourtPosition[i])]
+                                        %>, <%=
+                                        secondTeamPlayerPosition[secondTeamPlayerId.indexOf(secondTeamCourtPosition[i])]
+                                        %>
+                                    </option>
+                                    <% } %>
+                                </select>
+                            </div>
+                            <button class="btnPrimary" type="submit">
+                                Add point
+                            </button>
+                        </form>
+                    </div>
+                    <div class="card">
+                        <form
+                            action="<%= '/addnewgame/gamedashboard/' + gameAttributes[7] %>"
+                            method="post"
+                        >
+                            <input
+                                type="hidden"
+                                name="formNumber"
+                                value="<%= formNumber %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="numberOfPlayers"
+                                value="<%= numberOfPlayers %>"
+                            />
+                            <% for (let i = 0; i < 2; i++){ %>
+                            <input
+                                type="hidden"
+                                name="teamName"
+                                value="<%= teamName[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="teamId"
+                                value="<%= teamId[i] %>"
+                            />
+                            <% } %> <% for (let i = 0; i < 8; i++){ %>
+                            <input
+                                type="hidden"
+                                name="gameAttributes"
+                                value="<%= gameAttributes[i] %>"
+                            />
+                            <% } %> <% for (let i = 0; i < numberOfPlayers;
+                            i++){ %>
+                            <input
+                                type="hidden"
+                                name="firstTeamPlayerId"
+                                value="<%= firstTeamPlayerId[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="firstTeamPlayerJersey"
+                                value="<%= firstTeamPlayerJersey[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="firstTeamPlayerFirstName"
+                                value="<%= firstTeamPlayerFirstName[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="firstTeamPlayerLastName"
+                                value="<%= firstTeamPlayerLastName[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="firstTeamPlayerPosition"
+                                value="<%= firstTeamPlayerPosition[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="secondTeamPlayerId"
+                                value="<%= secondTeamPlayerId[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="secondTeamPlayerJersey"
+                                value="<%= secondTeamPlayerJersey[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="secondTeamPlayerFirstName"
+                                value="<%= secondTeamPlayerFirstName[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="secondTeamPlayerLastName"
+                                value="<%= secondTeamPlayerLastName[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="secondTeamPlayerPosition"
+                                value="<%= secondTeamPlayerPosition[i] %>"
+                            />
+                            <% } %> <% for (let i = 0; i < 3; i++){ %>
+                            <input
+                                type="hidden"
+                                name="firstTeamStaffId"
+                                value="<%= firstTeamStaffId[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="firstTeamStaffFirstName"
+                                value="<%= firstTeamStaffFirstName[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="firstTeamStaffLastName"
+                                value="<%= firstTeamStaffLastName[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="secondTeamStaffId"
+                                value="<%= secondTeamStaffId[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="secondTeamStaffFirstName"
+                                value="<%= secondTeamStaffFirstName[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="secondTeamStaffLastName"
+                                value="<%= secondTeamStaffLastName[i] %>"
+                            />
+                            <% } %> <% for (let i = 0; i < 6; i++){ %>
+                            <input
+                                type="hidden"
+                                name="firstTeamCourtPosition"
+                                value="<%= firstTeamCourtPosition[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="secondTeamCourtPosition"
+                                value="<%= secondTeamCourtPosition[i] %>"
+                            />
+                            <% } %>
+
+                            <input
+                                type="hidden"
+                                name="formName"
+                                value="callTimeOut"
+                            />
+                            <input
+                                type="hidden"
+                                name="setId"
+                                value="<%= setId %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="previousPointWonByTeam"
+                                value="<%= previousPointWonByTeam %>"
+                            />
+                            <% for (let i = 0; i < 2; i++){ %>
+                            <input
+                                type="hidden"
+                                name="resultInSets"
+                                value="<%= resultInSets[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="currentSetResult"
+                                value="<%= currentSetResult[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="timeoutsLeft"
+                                value="<%= timeoutsLeft[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="substitutionsLeft"
+                                value="<%= substitutionsLeft[i] %>"
+                            />
+                            <% } %>
+                            <h2>Call time out</h2>
+                            <div class="call-time-out">
+                                <p>
+                                    <%= teamName[0] %>:
+                                    <span><%= timeoutsLeft[0] %></span>
+                                </p>
+                                <p>
+                                    <%= teamName[1] %>:
+                                    <span><%= timeoutsLeft[1] %></span>
+                                </p>
+                            </div>
+                            <div class="label-input">
+                                <label for="team">Team</label><br />
+                                <select name="teamIndex">
+                                    <option value="0">
+                                        <%= teamName[0] %>
+                                    </option>
+                                    <option value="1">
+                                        <%= teamName[1] %>
+                                    </option>
+                                </select>
+                            </div>
+                            <button class="btnPrimary" type="submit">
+                                Call
+                            </button>
+                        </form>
+                    </div>
+                    <div class="card">
+                        <form
+                            action="<%= '/addnewgame/gamedashboard/' + gameAttributes[7] %>"
+                            method="post"
+                        >
+                            <input
+                                type="hidden"
+                                name="formNumber"
+                                value="<%= formNumber %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="numberOfPlayers"
+                                value="<%= numberOfPlayers %>"
+                            />
+                            <% for (let i = 0; i < 2; i++){ %>
+                            <input
+                                type="hidden"
+                                name="teamName"
+                                value="<%= teamName[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="teamId"
+                                value="<%= teamId[i] %>"
+                            />
+                            <% } %> <% for (let i = 0; i < 8; i++){ %>
+                            <input
+                                type="hidden"
+                                name="gameAttributes"
+                                value="<%= gameAttributes[i] %>"
+                            />
+                            <% } %> <% for (let i = 0; i < numberOfPlayers;
+                            i++){ %>
+                            <input
+                                type="hidden"
+                                name="firstTeamPlayerId"
+                                value="<%= firstTeamPlayerId[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="firstTeamPlayerJersey"
+                                value="<%= firstTeamPlayerJersey[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="firstTeamPlayerFirstName"
+                                value="<%= firstTeamPlayerFirstName[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="firstTeamPlayerLastName"
+                                value="<%= firstTeamPlayerLastName[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="firstTeamPlayerPosition"
+                                value="<%= firstTeamPlayerPosition[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="secondTeamPlayerId"
+                                value="<%= secondTeamPlayerId[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="secondTeamPlayerJersey"
+                                value="<%= secondTeamPlayerJersey[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="secondTeamPlayerFirstName"
+                                value="<%= secondTeamPlayerFirstName[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="secondTeamPlayerLastName"
+                                value="<%= secondTeamPlayerLastName[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="secondTeamPlayerPosition"
+                                value="<%= secondTeamPlayerPosition[i] %>"
+                            />
+                            <% } %> <% for (let i = 0; i < 3; i++){ %>
+                            <input
+                                type="hidden"
+                                name="firstTeamStaffId"
+                                value="<%= firstTeamStaffId[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="firstTeamStaffFirstName"
+                                value="<%= firstTeamStaffFirstName[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="firstTeamStaffLastName"
+                                value="<%= firstTeamStaffLastName[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="secondTeamStaffId"
+                                value="<%= secondTeamStaffId[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="secondTeamStaffFirstName"
+                                value="<%= secondTeamStaffFirstName[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="secondTeamStaffLastName"
+                                value="<%= secondTeamStaffLastName[i] %>"
+                            />
+                            <% } %> <% for (let i = 0; i < 6; i++){ %>
+                            <input
+                                type="hidden"
+                                name="firstTeamCourtPosition"
+                                value="<%= firstTeamCourtPosition[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="secondTeamCourtPosition"
+                                value="<%= secondTeamCourtPosition[i] %>"
+                            />
+                            <% } %>
+
+                            <input
+                                type="hidden"
+                                name="formName"
+                                value="replacePlayer"
+                            />
+                            <input
+                                type="hidden"
+                                name="setId"
+                                value="<%= setId %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="previousPointWonByTeam"
+                                value="<%= previousPointWonByTeam %>"
+                            />
+                            <% for (let i = 0; i < 2; i++){ %>
+                            <input
+                                type="hidden"
+                                name="resultInSets"
+                                value="<%= resultInSets[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="currentSetResult"
+                                value="<%= currentSetResult[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="timeoutsLeft"
+                                value="<%= timeoutsLeft[i] %>"
+                            />
+                            <input
+                                type="hidden"
+                                name="substitutionsLeft"
+                                value="<%= substitutionsLeft[i] %>"
+                            />
+                            <% } %>
+                            <h2>Replace player</h2>
+                            <div>
+                                <p>
+                                    <%= teamName[0] %>:
+                                    <span><%= substitutionsLeft[0] %></span>
+                                </p>
+                                <p>
+                                    <%= teamName[1] %>:
+                                    <span><%= substitutionsLeft[1] %></span>
+                                </p>
+                            </div>
+                            <div class="label-input">
+                                <label for="replacePlayerTeam">Team</label
+                                ><br />
+                                <select name="teamIndex" id="replacePlayerTeam">
+                                    <option value="0">
+                                        <%= teamName[0] %>
+                                    </option>
+                                    <option value="1">
+                                        <%= teamName[1] %>
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="label-input">
+                                <label>Player in</label><br />
+                                <select name="playerIn" id="firstTeamPlayerIn">
+                                    <% for (let i = 0; i < numberOfPlayers;
+                                    i++){ %> <%
+                                    if(firstTeamCourtPosition.includes(firstTeamPlayerId[i])){
+                                    %> <% continue;} else{ %>
+                                    <option value="<%= firstTeamPlayerId[i] %>">
+                                        <%= firstTeamPlayerFirstName[i] %> <%=
+                                        firstTeamPlayerLastName[i] %>, <%=
+                                        firstTeamPlayerJersey[i] %>, <%=
+                                        firstTeamPlayerPosition[i] %>
+                                    </option>
+                                    <% } %> <% } %>
+                                </select>
+                                <select
+                                    name="playerIn"
+                                    id="secondTeamPlayerIn"
+                                    class="hide"
+                                >
+                                    <% for (let i = 0; i < numberOfPlayers;
+                                    i++){ %> <%
+                                    if(secondTeamCourtPosition.includes(secondTeamPlayerId[i])){
+                                    %> <% continue;} else{ %>
+                                    <option
+                                        value="<%= secondTeamPlayerId[i] %>"
+                                    >
+                                        <%= secondTeamPlayerFirstName[i] %> <%=
+                                        secondTeamPlayerLastName[i] %>, <%=
+                                        secondTeamPlayerJersey[i] %>, <%=
+                                        secondTeamPlayerPosition[i] %>
+                                    </option>
+                                    <% } %> <% } %>
+                                </select>
+                            </div>
+                            <div class="label-input">
+                                <label>Player out</label><br />
+                                <select
+                                    name="playerOut"
+                                    id="firstTeamPlayerOut"
+                                >
+                                    <% for (let i = 0; i < 6; i++){ %>
+                                    <option
+                                        value="<%= firstTeamCourtPosition[i] %>"
+                                    >
+                                        <%=
+                                        firstTeamPlayerFirstName[firstTeamPlayerId.indexOf(firstTeamCourtPosition[i])]
+                                        %> <%=
+                                        firstTeamPlayerLastName[firstTeamPlayerId.indexOf(firstTeamCourtPosition[i])]
+                                        %>, <%=
+                                        firstTeamPlayerJersey[firstTeamPlayerId.indexOf(firstTeamCourtPosition[i])]
+                                        %>, <%=
+                                        firstTeamPlayerPosition[firstTeamPlayerId.indexOf(firstTeamCourtPosition[i])]
+                                        %>
+                                    </option>
+                                    <% } %>
+                                </select>
+                                <select
+                                    name="playerOut"
+                                    id="secondTeamPlayerOut"
+                                    class="hide"
+                                >
+                                    <% for (let i = 0; i < 6; i++){ %>
+                                    <option
+                                        value="<%= secondTeamCourtPosition[i] %>"
+                                    >
+                                        <%=
+                                        secondTeamPlayerFirstName[secondTeamPlayerId.indexOf(secondTeamCourtPosition[i])]
+                                        %> <%=
+                                        secondTeamPlayerLastName[secondTeamPlayerId.indexOf(secondTeamCourtPosition[i])]
+                                        %>, <%=
+                                        secondTeamPlayerJersey[secondTeamPlayerId.indexOf(secondTeamCourtPosition[i])]
+                                        %>, <%=
+                                        secondTeamPlayerPosition[secondTeamPlayerId.indexOf(secondTeamCourtPosition[i])]
+                                        %>
+                                    </option>
+                                    <% } %>
+                                </select>
+                            </div>
+                            <button class="btnPrimary" type="submit">
+                                Replace players
+                            </button>
+                        </form>
+                    </div>
+                    <div class="card">
+                        <form
+                            action="<%= '/addnewgame/gamedashboard/' + gameAttributes[7] %>"
+                            method="post"
+                        >
+                            <input
+                                type="hidden"
+                                name="formName"
+                                value="giveCard"
+                            />
+                            <h2>Give card</h2>
+                            <div class="label-input">
+                                <label for="giveCardTeam">Team</label><br />
+                                <select name="teamIndex" id="giveCardTeam">
+                                    <option value="0">
+                                        <%= teamName[0] %>
+                                    </option>
+                                    <option value="1">
+                                        <%= teamName[1] %>
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="label-input">
+                                <label for="typeOfCard">Type of card</label
+                                ><br />
+                                <select name="typeOfCard">
+                                    <option value="private">Yellow</option>
+                                    <option value="private">Red</option>
+                                </select>
+                            </div>
+                            <div class="label-input">
+                                <label>Person</label><br />
+                                <select
+                                    name="person"
+                                    id="giveCardFirstTeamPlayers"
+                                >
+                                    <% for (let i = 0; i < numberOfPlayers;
+                                    i++){ %>
+                                    <option value="<%= firstTeamPlayerId[i] %>">
+                                        <%= firstTeamPlayerFirstName[i] %> <%=
+                                        firstTeamPlayerLastName[i] %>, <%=
+                                        firstTeamPlayerJersey[i] %>, <%=
+                                        firstTeamPlayerPosition[i] %>
+                                    </option>
+                                    <% } %>
+                                </select>
+                                <select
+                                    name="person"
+                                    id="giveCardSecondTeamPlayers"
+                                    class="hide"
+                                >
+                                    <% for (let i = 0; i < numberOfPlayers;
+                                    i++){ %>
+                                    <option
+                                        value="<%= secondTeamPlayerId[i] %>"
+                                    >
+                                        <%= secondTeamPlayerFirstName[i] %> <%=
+                                        secondTeamPlayerLastName[i] %>, <%=
+                                        secondTeamPlayerJersey[i] %>, <%=
+                                        secondTeamPlayerPosition[i] %>
+                                    </option>
+                                    <% } %>
+                                </select>
+                            </div>
+                            <button class="btnPrimary" type="submit">
+                                Give card
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <div class="dashboard__column">
+                    <div class="volleyball-court">
+                        <div class="volleyball-court__left">
+                            <div class="volleyball-court__left-column">
+                                <div
+                                    class="volleyball-court__left-6"
+                                    title="<%= firstTeamPlayerFirstName[firstTeamPlayerId.indexOf(firstTeamCourtPosition[5])] + ' '+ firstTeamPlayerLastName[firstTeamPlayerId.indexOf(firstTeamCourtPosition[5])] %>"
+                                >
+                                    <%=
+                                    firstTeamPlayerJersey[firstTeamPlayerId.indexOf(
+                                    firstTeamCourtPosition[5])] %>
+                                </div>
+                            </div>
+                            <div class="volleyball-court__left-column">
+                                <div
+                                    class="volleyball-court__left-5"
+                                    title="<%= firstTeamPlayerFirstName[firstTeamPlayerId.indexOf(firstTeamCourtPosition[4])] + ' '+ firstTeamPlayerLastName[firstTeamPlayerId.indexOf(firstTeamCourtPosition[4])] %>"
+                                >
+                                    <%=
+                                    firstTeamPlayerJersey[firstTeamPlayerId.indexOf(firstTeamCourtPosition[4])]
+                                    %>
+                                </div>
+                                <div
+                                    class="volleyball-court__left-1"
+                                    title="<%= firstTeamPlayerFirstName[firstTeamPlayerId.indexOf(firstTeamCourtPosition[0])] + ' '+ firstTeamPlayerLastName[firstTeamPlayerId.indexOf(firstTeamCourtPosition[0])] %>"
+                                >
+                                    <%=
+                                    firstTeamPlayerJersey[firstTeamPlayerId.indexOf(firstTeamCourtPosition[0])]
+                                    %>
+                                </div>
+                            </div>
+                            <div class="volleyball-court__left-column">
+                                <div
+                                    class="volleyball-court__left-4"
+                                    title="<%= firstTeamPlayerFirstName[firstTeamPlayerId.indexOf(firstTeamCourtPosition[3])] + ' '+ firstTeamPlayerLastName[firstTeamPlayerId.indexOf(firstTeamCourtPosition[3])] %>"
+                                >
+                                    <%=
+                                    firstTeamPlayerJersey[firstTeamPlayerId.indexOf(firstTeamCourtPosition[3])]
+                                    %>
+                                </div>
+                                <div
+                                    class="volleyball-court__left-3"
+                                    title="<%= firstTeamPlayerFirstName[firstTeamPlayerId.indexOf(firstTeamCourtPosition[2])] + ' '+ firstTeamPlayerLastName[firstTeamPlayerId.indexOf(firstTeamCourtPosition[2])] %>"
+                                >
+                                    <%=
+                                    firstTeamPlayerJersey[firstTeamPlayerId.indexOf(firstTeamCourtPosition[2])]
+                                    %>
+                                </div>
+                                <div
+                                    class="volleyball-court__left-2"
+                                    title="<%= firstTeamPlayerFirstName[firstTeamPlayerId.indexOf(firstTeamCourtPosition[1])] + ' '+ firstTeamPlayerLastName[firstTeamPlayerId.indexOf(firstTeamCourtPosition[1])] %>"
+                                >
+                                    <%=
+                                    firstTeamPlayerJersey[firstTeamPlayerId.indexOf(firstTeamCourtPosition[1])]
+                                    %>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="volleyball-court__right">
+                            <div class="volleyball-court__right-column">
+                                <div
+                                    class="volleyball-court__right-2"
+                                    title="<%= secondTeamPlayerFirstName[secondTeamPlayerId.indexOf(secondTeamCourtPosition[1])] + ' '+ secondTeamPlayerLastName[secondTeamPlayerId.indexOf(secondTeamCourtPosition[1])] %>"
+                                >
+                                    <%=
+                                    secondTeamPlayerJersey[secondTeamPlayerId.indexOf(secondTeamCourtPosition[1])]
+                                    %>
+                                </div>
+                                <div
+                                    class="volleyball-court__right-3"
+                                    title="<%= secondTeamPlayerFirstName[secondTeamPlayerId.indexOf(secondTeamCourtPosition[2])] + ' '+ secondTeamPlayerLastName[secondTeamPlayerId.indexOf(secondTeamCourtPosition[2])] %>"
+                                >
+                                    <%=
+                                    secondTeamPlayerJersey[secondTeamPlayerId.indexOf(secondTeamCourtPosition[2])]
+                                    %>
+                                </div>
+                                <div
+                                    class="volleyball-court__right-4"
+                                    title="<%= secondTeamPlayerFirstName[secondTeamPlayerId.indexOf(secondTeamCourtPosition[3])] + ' '+ secondTeamPlayerLastName[secondTeamPlayerId.indexOf(secondTeamCourtPosition[3])] %>"
+                                >
+                                    <%=
+                                    secondTeamPlayerJersey[secondTeamPlayerId.indexOf(secondTeamCourtPosition[3])]
+                                    %>
+                                </div>
+                            </div>
+                            <div class="volleyball-court__right-column">
+                                <div
+                                    class="volleyball-court__right-1"
+                                    title="<%= secondTeamPlayerFirstName[secondTeamPlayerId.indexOf(secondTeamCourtPosition[0])] + ' '+ secondTeamPlayerLastName[secondTeamPlayerId.indexOf(secondTeamCourtPosition[0])] %>"
+                                >
+                                    <%=
+                                    secondTeamPlayerJersey[secondTeamPlayerId.indexOf(secondTeamCourtPosition[0])]
+                                    %>
+                                </div>
+                                <div
+                                    class="volleyball-court__right-5"
+                                    title="<%= secondTeamPlayerFirstName[secondTeamPlayerId.indexOf(secondTeamCourtPosition[4])] + ' '+ secondTeamPlayerLastName[secondTeamPlayerId.indexOf(secondTeamCourtPosition[4])] %>"
+                                >
+                                    <%=
+                                    secondTeamPlayerJersey[secondTeamPlayerId.indexOf(secondTeamCourtPosition[4])]
+                                    %>
+                                </div>
+                            </div>
+                            <div class="volleyball-court__right-column">
+                                <div
+                                    class="volleyball-court__right-6"
+                                    title="<%= secondTeamPlayerFirstName[secondTeamPlayerId.indexOf(secondTeamCourtPosition[5])] + ' '+ secondTeamPlayerLastName[secondTeamPlayerId.indexOf(secondTeamCourtPosition[5])] %>"
+                                >
+                                    <%=
+                                    secondTeamPlayerJersey[secondTeamPlayerId.indexOf(secondTeamCourtPosition[5])]
+                                    %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card game-information-card">
+                        <h2>Game information</h2>
+                        <h3><%= teamName[0] %> vs <%= teamName[1] %></h3>
+                        <div class="game-information-card__paragraphs">
+                            <p>League: <span><%= gameAttributes[0] %></span></p>
+                            <p>
+                                City and country:
+                                <span><%= gameAttributes[1] %></span>
+                            </p>
+                            <p>Hall: <span><%= gameAttributes[2] %></span></p>
+                            <p>Started at: <span>18h</span></p>
+                            <p>
+                                First referee:
+                                <span><%= gameAttributes[3] %></span>
+                            </p>
+                            <p>
+                                Second referee:
+                                <span><%= gameAttributes[4] %></span>
+                            </p>
+                            <p>
+                                Game description:
+                                <span><%= gameAttributes[5] %></span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="last-points">
+                        <h2>Last 5 points</h2>
+                        <div class="card current-result-card">
+                            <div class="current-result-card__content">
+                                <div class="current-result-card__result-board">
+                                    <div
+                                        class="current-result-card__result-board-teams"
+                                    >
+                                        <p><%= teamName[0] %></p>
+                                        <p><%= teamName[1] %></p>
+                                    </div>
+                                    <div class="game-card__result">
+                                        <div class="game-card__set">
+                                            <div class="game-card__set--winner">
+                                                2
+                                            </div>
+                                            <div>1</div>
+                                        </div>
+                                        <div class="game-card__set">
+                                            <div class="game-card__set--winner">
+                                                21
+                                            </div>
+                                            <div>19</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="current-result-card__additional-info"
+                                >
+                                    <p>
+                                        Serve: <span>Nikola Gjorgiev, 4</span>
+                                    </p>
+                                    <p>Type of point: <span>Ace</span></p>
+                                    <p>
+                                        Point won by:
+                                        <span>Nikola Gjorgiev, 4</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card current-result-card">
+                            <div class="current-result-card__content">
+                                <div class="current-result-card__result-board">
+                                    <div
+                                        class="current-result-card__result-board-teams"
+                                    >
+                                        <p><%= teamName[0] %></p>
+                                        <p><%= teamName[1] %></p>
+                                    </div>
+                                    <div class="game-card__result">
+                                        <div class="game-card__set">
+                                            <div class="game-card__set--winner">
+                                                2
+                                            </div>
+                                            <div>1</div>
+                                        </div>
+                                        <div class="game-card__set">
+                                            <div class="game-card__set--winner">
+                                                20
+                                            </div>
+                                            <div>19</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="current-result-card__additional-info"
+                                >
+                                    <p>
+                                        Serve: <span>Nikola Gjorgiev, 4</span>
+                                    </p>
+                                    <p>Type of point: <span>Ace</span></p>
+                                    <p>
+                                        Point won by:
+                                        <span>Nikola Gjorgiev, 4</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card current-result-card">
+                            <div class="current-result-card__content">
+                                <div class="current-result-card__result-board">
+                                    <div
+                                        class="current-result-card__result-board-teams"
+                                    >
+                                        <p><%= teamName[0] %></p>
+                                        <p><%= teamName[1] %></p>
+                                    </div>
+                                    <div class="game-card__result">
+                                        <div class="game-card__set">
+                                            <div class="game-card__set--winner">
+                                                2
+                                            </div>
+                                            <div>1</div>
+                                        </div>
+                                        <div class="game-card__set">
+                                            <div class="game-card__set--winner">
+                                                19
+                                            </div>
+                                            <div>19</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="current-result-card__additional-info"
+                                >
+                                    <p>
+                                        Serve: <span>Wallace De Souza, 3</span>
+                                    </p>
+                                    <p>Type of point: <span>Block</span></p>
+                                    <p>
+                                        Point won by:
+                                        <span>Risto Nikolov, 3</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card current-result-card">
+                            <div class="current-result-card__content">
+                                <div class="current-result-card__result-board">
+                                    <div
+                                        class="current-result-card__result-board-teams"
+                                    >
+                                        <p><%= teamName[0] %></p>
+                                        <p><%= teamName[1] %></p>
+                                    </div>
+                                    <div class="game-card__result">
+                                        <div class="game-card__set">
+                                            <div class="game-card__set--winner">
+                                                2
+                                            </div>
+                                            <div>1</div>
+                                        </div>
+                                        <div class="game-card__set">
+                                            <div>18</div>
+                                            <div class="game-card__set--winner">
+                                                19
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="current-result-card__additional-info"
+                                >
+                                    <p>Serve: <span>Vlado Milev, 6</span></p>
+                                    <p>Type of point: <span>Attack</span></p>
+                                    <p>
+                                        Point won by:
+                                        <span>Lucas Saatkamp, 8</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card current-result-card">
+                            <div class="current-result-card__content">
+                                <div class="current-result-card__result-board">
+                                    <div
+                                        class="current-result-card__result-board-teams"
+                                    >
+                                        <p><%= teamName[0] %></p>
+                                        <p><%= teamName[1] %></p>
+                                    </div>
+                                    <div class="game-card__result">
+                                        <div class="game-card__set">
+                                            <div class="game-card__set--winner">
+                                                2
+                                            </div>
+                                            <div>1</div>
+                                        </div>
+                                        <div class="game-card__set">
+                                            <div class="game-card__set--winner">
+                                                18
+                                            </div>
+                                            <div>18</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="current-result-card__additional-info"
+                                >
+                                    <p>Serve: <span>Bruno Rezende, 1</span></p>
+                                    <p>Type of point: <span>Attack</span></p>
+                                    <p>
+                                        Point won by:
+                                        <span>Aleksandar Ljaftov, 8</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <%- include("./partials/footer"); %>
+    </body>
+</html>

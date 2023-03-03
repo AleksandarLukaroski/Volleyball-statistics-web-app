@@ -1,0 +1,19 @@
+@use "../utilities" as u;
+
+.my-games-container,
+.live-games-container,
+.most-viewed-completed-games-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 30rem);
+    gap: 2rem;
+
+    @include u.breakpoint-down(medium) {
+        justify-content: center;
+    }
+}
+
+.most-viewed-completed-games-container {
+    .game-card .links a:first-child {
+        margin-right: 0;
+    }
+}

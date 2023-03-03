@@ -1,0 +1,45 @@
+.card-register {
+    // width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+
+    input {
+        width: 100%;
+    }
+
+    hr {
+        border: 1px solid hsl(214, 100%, 99%);
+        background-color: hsl(0, 0%, 100%);
+        margin-bottom: 2.5rem;
+    }
+
+    .btnPrimary {
+        width: 100%;
+    }
+
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .login-paragraph a {
+        text-decoration: underline;
+        display: inline;
+    }
+
+    .login-paragraph {
+        margin-top: 2rem;
+    }
+
+    .login-paragraph,
+    .btnSecondary {
+        margin-bottom: 1.5rem;
+    }
+
+    .btnSecondary {
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+}
